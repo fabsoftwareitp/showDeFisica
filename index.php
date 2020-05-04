@@ -10,19 +10,7 @@
 	</head>
 
 	<body>
-		<div class="header">
-			<a href=""><img src="img/LogoShowDeFisica.png" alt=""></a>
-			<input type="checkbox" name="" id="check">
-			<div class="links-menu">
-				<a class="nav-link" href="">Início</a>
-				<a class="nav-link" href="">Sobre</a>
-				<a class="nav-link" href="">Agenda</a>
-				<a class="nav-link" href="">Galeria</a>
-				<a class="nav-link" href="">Contato</a>
-				<a class="nav-link" href="">Patrocine</a>
-			</div>
-			<label for="check">Menu</label>
-		</div>
+		<?php include 'menu.php'; ?>
 
 		<div class="welcome">
 			<img src="img/ausronauta.png">
@@ -241,22 +229,7 @@
 			<a href="">Torne-se um apoiador</a>
 		</div>
 
-		<div class="footer">
-			<div class="social-web margin-auto">
-				<a href="https://www.facebook.com/ift-ifsp" class="link-web">
-					<img src="./img/icon/facebook.png" alt=""> 
-				</a>
-
-				<a href="https://www.google.com" class="link-web">
-					<img src="./img/icon/google.png" alt="">
-				</a>
-
-				<a href="https://www.github.com/fabsoftwareitp" class="link-web">
-					<img src="./img/icon/github.png" alt="">
-				</a>
-			</div>
-
-			<p>Desenvolvido por Fábrica de Software &copy; - 2020</p>
-		</div>
+        <?php include 'footer.php'; ?>
+		
 	</body>
 </html>
