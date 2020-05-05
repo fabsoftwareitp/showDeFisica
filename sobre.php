@@ -27,7 +27,7 @@
 							sobre a fisica.                   
 							Esperamos que você goste deste nosso projeto tanto quanto gostamos de oferecer a você.
 							Se você tiver alguma pergunta,comentário ou queira nos apoiar, não hesite em nos
-							<a href="contato.html">contactar.</a>
+							<a href="contato.php">contactar.</a>
 							<br>
 					   
 						Atenciosamente,

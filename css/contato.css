@@ -1,52 +1,79 @@
-.heading {
-  font-weight: 700;
-  color: #5d4267;
+* {
+  box-sizing: border-box;
 }
-.card.colorful-card .testimonial-card .card-up {
-  height: 95px;
+
+body {
+  background: #ecf0f1;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
 }
-.card.colorful-card .testimonial-card .avatar {
-  border: 3px solid #fff !important;
+
+.page-wrap {
+  max-width: 75rem;
+  margin: 0 auto;
 }
-.card.booking-card {
-  background-color: #c7f2e3;
+
+h1 {
+  color: #8e44ad;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  margin: 1.25rem 0;
 }
-.card.booking-card .fa {
-  color: #f7aa00;
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+  font-size: 0.75em;
+  color: #da3241;
+  top: -2.25rem;
+  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
 }
-.card.booking-card .card-body .card-text {
-  color: #db2d43;
+
+.styled-input {
+  float: left;
+  width: 33.3333%;
+  margin: 2rem 0 1rem;
+  position: relative;
 }
-.card.card.booking-card .chip {
-  background-color: #87e5da;
+.styled-input label {
+  color: #999;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
+  pointer-events: none;
 }
-.card.booking-card .card-body hr {
-  border-top: 1px solid #f7aa00;
+.styled-input.wide {
+  width: 100%;
 }
-.mimosa {
-  background-color: #F0C05A;
+
+input, textarea {
+  padding: 1rem 1rem;
+  border: 0;
+  width: 100%;
+  font-size: 1rem;
 }
-.fuchsia-rose-text {
-  color: #db0075;
+input ~ span, textarea ~ span {
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #da3241;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
 }
-.aqua-sky-text {
-  color: #5cc6c3;
+input:focus, textarea:focus {
+  outline: 0;
 }
-.mimosa-text {
-  color: #F0C05A;
+input:focus ~ span, textarea:focus ~ span {
+  width: 100%;
+  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
 }
-.list-inline-item .fas, .list-inline-item .far {
-  font-size: .8rem;
-}
-.chili-pepper-text {
-  color: #9B1B30;
-}
-.collapse-content .fa.fa-heart:hover {
-  color: #f44336 !important;
-}
-.collapse-content .fa.fa-share-alt:hover {
-  color: #0d47a1 !important;
-}
-.card-wrapper.card-action {
-  min-height: 400px;
+
+textarea {
+  width: 100%;
+  min-height: 15em;
 }
