@@ -16,34 +16,39 @@
 	<body>
     <?php include 'menu.php'; ?>
 
-       <div class="container">
-       <div class="page-wrap">
-  <h1>Polymer's Floating Label Input via CSS</h1>
-  <form>
-    <div class="styled-input">
-      <input type="text" required />
-      <label>Name</label>
-      <span></span>
-    </div>
-    <div class="styled-input">
-      <input type="email" required />
-      <label>Email</label>
-      <span></span>
-    </div>
-    <div class="styled-input">
-      <input type="tel" required />
-      <label>Phone</label>
-      <span></span>
-    </div>
-    <div class="styled-input wide">
-      <textarea required></textarea>
-      <label>Message</label>
-      <span></span>
-    </div>
-  </form>
-</div>
+       <div class="container border border-dark">
 
-       </div>       
+            <div class="page-wrap">
+               
+                    <h1>Guia para contato</h1>
+                
+                <form>
+                    <div class="styled-input col-md-6">
+                    <input type="nome" required />
+                    <label>Nome</label>
+                    <span></span>
+                    </div>
+                    <div class="styled-input col-md-6">
+                    <input type="email" required />
+                    <label>Email</label>
+                    <span></span>
+                    </div>
+
+                    <div class="styled-input col-md-12">
+                    <input type="contato" required />
+                    <label>Tipo de contato</label>
+                    <span></span>
+                    </div>
+
+                    <div class="styled-input wide">
+                    <textarea required></textarea>
+                    <label>Texto</label>
+                    <span></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+     
        <?php include 'footer.php'; ?>
 
 	</body>
