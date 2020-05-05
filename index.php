@@ -7,6 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/atomo.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	</head>
 
 	<body>
@@ -24,7 +26,20 @@
 				<p class="sobre">Sobre o Projeto</p>
 				<p>Show de física é um projeto no campo da Educação e Ciência. Sua missão é contribuir para o ensino de conceitos físicos por meio de diferentes e divertidos métodos de apredizagem.</p>
 			</div>
-			<img src="img/atomo.png">
+			<!-- <img src="img/atomo.png"> -->
+				<div class='atom'>
+				<div class='line'>
+					<div class='neutrino a'></div>
+				</div>
+				<div class='line'>
+					<div class='neutrino b'></div>
+				</div>
+				<div class='line'>
+					<div class='neutrino c '></div>
+				</div>
+				<div class='quark animated pulse infinite'></div>
+				</div>
+			
 		</div>
 
 		<div class="agenda fundo">

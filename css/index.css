@@ -132,6 +132,7 @@ span{color: #da3241;}
 		left: 50%;
 		bottom: 50%;
 		z-index: 10;
+		height:100%;
 	}
 	.welcome p{
 		font-weight: bold;
@@ -161,9 +162,12 @@ span{color: #da3241;}
 		border: 1px solid #ff6d6d;
 		border-radius: 100%;
 		margin: 0 0 20px 0;
-		animation: jump 1s linear infinite;
+		animation: jump 3s linear infinite;
 	}
 
+	.atom{
+		animation: spin 8s linear infinite;
+	}
 
 	.about{
 		padding: 25px 0;
