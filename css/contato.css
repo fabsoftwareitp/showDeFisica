@@ -1,6 +1,9 @@
 @import url('responsivo.css');
 @import url('template.css');
 
+body{
+  background-color: #f0f0f0;
+}
 
 textarea {
   width: 100%;
