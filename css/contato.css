@@ -1,92 +1,20 @@
-* {
-  box-sizing: border-box;
-}
+@import url('responsivo.css');
+@import url('template.css');
 
-body {
-  background: #ecf0f1;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
-}
-
-.page-wrap {
-  max-width: 75rem;
-  margin: 0 auto;
-}
-
-
-.div-card{
- 
-}
-
-h1 {
-  color: #8e44ad;
-  font-size: 1.5rem;
-  letter-spacing: -1px;
-  margin: 1.25rem 0;
-}
-
-input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
-  font-size: 0.75em;
-  color: #da3241;
-  top: -2.25rem;
-  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
-  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
-}
-
-.styled-input {
-  float: left;
-  width: 33.3333%;
-  margin: 2rem 0 1rem;
-  position: relative;
-}
-.styled-input label {
-  color: #999;
-  padding: 1rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
-  transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
-  pointer-events: none;
-}
-.styled-input.wide {
-  width: 100%;
-}
-
-input, textarea {
-  padding: 1rem 1rem;
-  border: 0;
-  width: 100%;
-  font-size: 1rem;
-}
-input ~ span, textarea ~ span {
-  display: block;
-  width: 0;
-  height: 3px;
-  background: #da3241;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
-  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
-}
-input:focus, textarea:focus {
-  outline: 0;
-}
-input:focus ~ span, textarea:focus ~ span {
-  width: 100%;
-  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
-  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
-}
 
 textarea {
   width: 100%;
   min-height: 15em;
 }
 
-
 .corpo{
   background-color:#333;
   color:white;
-  height: 70%;
+ 
   align-items: center;
+  margin-bottom: 10px;
+}
+
+.b-ap{
+  margin-bottom: 20px;
 }

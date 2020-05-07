@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="css/index.css">
+		
 		<link rel="stylesheet" href="css/atomo.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	</head>
@@ -27,18 +28,20 @@
 				<p>Show de física é um projeto no campo da Educação e Ciência. Sua missão é contribuir para o ensino de conceitos físicos por meio de diferentes e divertidos métodos de apredizagem.</p>
 			</div>
 			<!-- <img src="img/atomo.png"> -->
+			<div class="container">
 				<div class='atom'>
-				<div class='line'>
-					<div class='neutrino a'></div>
+					<div class='line'>
+						<div class='neutrino a'></div>
+					</div>
+					<div class='line'>
+						<div class='neutrino b'></div>
+					</div>
+					<div class='line'>
+						<div class='neutrino c '></div>
+					</div>
+					<div class='quark animated pulse infinite'></div>
 				</div>
-				<div class='line'>
-					<div class='neutrino b'></div>
-				</div>
-				<div class='line'>
-					<div class='neutrino c '></div>
-				</div>
-				<div class='quark animated pulse infinite'></div>
-				</div>
+			</div>
 			
 		</div>
 
@@ -168,7 +171,7 @@
 
 		<div class="contact fundo">
 			<p>Deseja o Show da Física em sua Escola ?</p>
-			<a href="">Entre em contato</a>
+			<a href="./contato.php">Entre em contato</a>
 		</div>
 
 		<div class="news">
@@ -241,7 +244,7 @@
 
 		<div class="apoie">
 			<p>Gostou da ideia e quer apoiar o projeto?</p>
-			<a href="">Torne-se um apoiador</a>
+			<a href="./apoio.php">Torne-se um apoiador</a>
 		</div>
 
         <?php include 'footer.php'; ?>

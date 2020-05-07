@@ -20,7 +20,7 @@
 
             <div class="page-wrap">
                
-                    <h1>Guia para contato</h1>
+                    <h3>Guia para contato</h3>
                 
                 <form>
                     <div class="styled-input col-md-6">
@@ -45,6 +45,8 @@
                     <label>Texto</label>
                     <span></span>
                     </div>
+
+                    <button type="button" class="btn btn-danger btn-block">Enviar</button>
                 </form>
             </div>
         </div>
