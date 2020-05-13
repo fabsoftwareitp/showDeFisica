@@ -1,5 +1,5 @@
 <div class="header">
-    <a href=""><img src="img/LogoShowDeFisica.png" alt=""></a>
+    <a href="."><img src="img/LogoShowDeFisica.png" alt=""></a>
     <input type="checkbox" name="" id="check">
     <div class="links-menu">
         <a class="nav-link" href="./">Início</a>

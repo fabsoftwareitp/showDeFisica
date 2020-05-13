@@ -27,7 +27,6 @@
 				<p class="sobre">Sobre o Projeto</p>
 				<p>Show de física é um projeto no campo da Educação e Ciência. Sua missão é contribuir para o ensino de conceitos físicos por meio de diferentes e divertidos métodos de apredizagem.</p>
 			</div>
-			<!-- <img src="img/atomo.png"> -->
 			<div class="container">
 				<div class='atom'>
 					<div class='line'>
