@@ -1,252 +1,118 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<title>Show da Física</title>
-		<meta charset="utf-8">
-		<link rel="shortcut icon" type="image/x-png" href="img/ausronauta.png">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
 
-		<link rel="stylesheet" href="css/index.css">
-		
-		<link rel="stylesheet" href="css/atomo.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	</head>
+    session_start();
 
-	<body>
-		<?php include 'menu.php'; ?>
+    //arquivos obrigatorios do framework
+    require_once 'biblioteca/mysqli.php';
+    require_once 'biblioteca/visao.php';
+    require_once 'biblioteca/uteis.php';
 
-		<div class="welcome">
-			<img src="img/ausronauta.png">
-			<p>Um novo jeito de aprender <span>ciência</span></p>
-			<div class="curve fundo"></div>
-			<a href="#sobre">&#9660;</a>
-		</div>
+    require_once 'app.php'; //arquivo geral da aplicacao
 
-		<div class="about fundo" id="sobre">
-			<div class="about-text">
-				<p class="sobre">Sobre o Projeto</p>
-				<p>Show de física é um projeto no campo da Educação e Ciência. Sua missão é contribuir para o ensino de conceitos físicos por meio de diferentes e divertidos métodos de apredizagem.</p>
-			</div>
-			<div class="container">
-				<div class='atom'>
-					<div class='line'>
-						<div class='neutrino a'></div>
-					</div>
-					<div class='line'>
-						<div class='neutrino b'></div>
-					</div>
-					<div class='line'>
-						<div class='neutrino c '></div>
-					</div>
-					<div class='quark animated pulse infinite'></div>
-				</div>
-			</div>
-			
-		</div>
+    extract(tratarURL()); //cria as variaveis com nome do controlador, acao e parametros
+    //se o arquivo correspondente ao controlador não existir mata a aplicação
+    if (!file_exists($nomeControlador)) {
+        die("Nao foi encontrado o arquivo: '$nomeControlador' para enviar a solicitacao!");
+    }
 
-		<div class="agenda fundo">
-			<input type="radio" name="nav-agenda" id="n1" checked>
-			<input type="radio" name="nav-agenda" id="n2">
-			<input type="radio" name="nav-agenda" id="n3">
+    //se existir inclui o arquivo
+    require_once $nomeControlador;
 
-			<p class="title-slide">Agenda</p>
+    try {
+        //verifica se NÃO existe a função correspondente a ação no controlador!
+        if (!is_callable($nomeAcaoControlador)) {
+            die('Não foi encontrada a <code>função</code> correspondente a ação <code>"' . $nomeAcaoControlador . '"</code> do controlador <code>"' . $nomeControlador . '"</code>');
+        }
 
-			<div class="slide">
-				<div class="item-list">
-					<div class="description">
-						<p class="info-title">Itapetininga</p>
-						<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus </p>
-					</div>
+        //aqui serão duas situaões: utilizando a lib de autenticacao ou não
+        $released = true;
 
-					<div class="banners">
-						<div class="date">
-							<img src="img/banner/cartaz 25.09.19.jpeg" alt="">
+        if (defined('ACESSO')) {
+            $role = getRoleOfControllerAction($nomeAcaoControlador);
 
-							<div class="saiba-mais">
-								<p>25 set</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
 
-						<div class="date">
-							<img src="img/banner/show dia 19.10.png" alt="">
+            $roles = explode(",", $role);
+            $userRole = acessoPegarPapelDoUsuario();
+            foreach ($roles as $role) {
+                
+                $released = true;
+                $role = trim($role);
+                if (!empty($role) && $role !== $userRole) {
+                    // echo "role=$role  userrole=$userRole <BR><BR>";
+                    //regra nao eh igual a encontrada na action do controlador
+                    $released = false;
+                    $authMsg = "O usuário não possui permissão para acessar essa funcionalidade";
+                }
+                if (empty($role) && !acessoUsuarioEstaLogado()) {
+                    $released = false;
+                    $authMsg = "Voce precisa autenticar-se para acessar!";
+                }
+                if (!empty($role) && $role == "anon") {
+                    //acesso anonimo
+                    $released = true;
+                }
+                if ($released) {
+                    break;
+                }
+            }
+        }
+        if ($released) {
+            //echo "acesso permitido";
+            call_user_func_array($nomeAcaoControlador, $parametrosControlador); //chama a funcao passando parametros   
+        } else {
+            //echo "acesso negado";
+            alert($authMsg, "warning");
+            redirecionar("login");
+        }
+    } catch (ArgumentCountError $e) {
+        echo "chama 404!";
+    }
 
-							<div class="saiba-mais">
-								<p>19 out</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
+    function getRoleOfControllerAction($nomeAcaoControlador) {
+        $rc = new ReflectionFunction($nomeAcaoControlador);
+        $role = $rc->getDocComment();
+        $role = trim(substr($role, 3, -2));
+        return $role;
+    }
 
-						<div class="date">
-							<img src="img/banner/show dia feira de ciencias outubro.png" alt="">
+    function tratarURL() {
+        $uri = explode("/", filter_input(INPUT_SERVER, 'REQUEST_URI')); //quebra a URL nos pedaços usando a barra como separador
+        /* duas situações possíveis: 
+        * 1. seusite.com/{controlador}/{acao}/{param1}/{param2}/..
+        * 2. localhost/nomeAplicacao/{controlador}/{acao}/{param1}/{param2}/..
+        * TODO: verificar esse ponto.
+        */
+        
+        $urlBase = URL_BASE;
+        $urlDividida = explode("://", $urlBase);
+        $urlRestante = explode("/", $urlDividida[1]);
 
-							<div class="saiba-mais">
-								<p>24 out</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
-					</div>
-				</div>
+        if(count($urlRestante) > 0 && empty($urlRestante[1])) {
+            $indiceBaseURL = 1; //prod
+        } else {
+            $indiceBaseURL = 2; //local
+        }
 
-				<div class="item-list">
-					<div class="description">
-						<p class="info-title">Itú</p>
-						<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus</p>
-					</div>
+        $nomeControlador = $uri[$indiceBaseURL]; //recupera o nome do controlador via URL
 
-					<div class="banners">
-						<div class="date">
-							<img src="img/banner/cartaz 25.09.19.jpeg" alt="">
+        if (!$nomeControlador && CONTROLADOR_PADRAO) {
+            $nomeControlador = CONTROLADOR_PADRAO;
+        }
 
-							<div class="saiba-mais">
-								<p>18 fev</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
+        $nomeControlador = "controlador/" . $nomeControlador . "Controlador.php";
 
-						<div class="date">
-							<img src="img/banner/show dia 19.10.png" alt="">
+        //recupera a açao do controlador ou coloca o valor "index"como ação padrão do controlador
+        $posicaoIndiceAcaoControlador = $indiceBaseURL + 1;
+        $nomeAcaoControlador = (isset($uri[$posicaoIndiceAcaoControlador]) and ! empty($uri[$posicaoIndiceAcaoControlador])) ? $nomeAcaoControlador = $uri[$posicaoIndiceAcaoControlador] : 'index'; //pega a acao
+        //recupear os parâmetros da URL, caso não existam retorna um array vazio
+        $posicaoIndiceParametros = $indiceBaseURL + 2;
+        $parametrosControlador = (count($uri) > $posicaoIndiceParametros) ? array_slice($uri, $posicaoIndiceParametros) : array(); //pega os parametros, se existir
 
-							<div class="saiba-mais">
-								<p>20 mar</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
+        $url = array(
+            "nomeControlador" => $nomeControlador,
+            "nomeAcaoControlador" => $nomeAcaoControlador,
+            "parametrosControlador" => $parametrosControlador
+        );
 
-						<div class="date">
-							<img src="img/banner/show dia feira de ciencias outubro.png" alt="">
-
-							<div class="saiba-mais">
-								<p>05 abr</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-list">
-					<div class="description">
-						<p class="info-title">Itapeva</p>
-						<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus</p>
-					</div>
-
-					<div class="banners">
-						<div class="date">
-							<img src="img/banner/cartaz 25.09.19.jpeg" alt="">
-
-							<div class="saiba-mais">
-								<p>02 jun</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
-
-						<div class="date">
-							<img src="img/banner/show dia 19.10.png" alt="">
-
-							<div class="saiba-mais">
-								<p>13 ago</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
-
-						<div class="date">
-							<img src="img/banner/show dia feira de ciencias outubro.png" alt="">
-
-							<div class="saiba-mais">
-								<p>11 nov</p>
-								<a href="">Saiba-mais &#10148;</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="navigation">
-				<label class="lbl-slide s1" for="n1"><div class="circle"></div></label>
-				<label class="lbl-slide s2" for="n2"><div class="circle"></div></label>
-				<label class="lbl-slide s3" for="n3"><div class="circle"></div></label>
-			</div>
-		</div>
-
-		<div class="contact fundo">
-			<p>Deseja o Show da Física em sua Escola ?</p>
-			<a href="./contato.php">Entre em contato</a>
-		</div>
-
-		<div class="news">
-			<div class="ultimas-noticias">
-				<p>Últimas Notícias e Atualizações</p>
-
-				<svg id="plus-circle" class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="#da3241" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-					<path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-					<path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/>
-				</svg>
-			</div>
-
-			<div class="descricao-noticia">
-				<a href="" class="caixa-noticia">
-					<div class="img-caixa-noticia">
-						<img src="" alt="">
-					</div>
-
-					<p class="title">Notícia número 1</p>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
-				</a>
-
-				<a href="" class="caixa-noticia">
-					<div class="img-caixa-noticia">
-						<img src="" alt="">
-					</div>
-
-					<p class="title">Notícia número 2</p>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
-				</a>
-
-				<a href="" class="caixa-noticia">
-					<div class="img-caixa-noticia">
-						<img src="" alt="">
-					</div>
-
-					<p class="title">Notícia número 3</p>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
-				</a>
-
-				<a href="" class="caixa-noticia">
-					<div class="img-caixa-noticia">
-						<img src="" alt="">
-					</div>
-
-					<p class="title">Notícia número 4</p>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
-				</a>
-
-				<a href="" class="caixa-noticia">
-					<div class="img-caixa-noticia">
-						<img src="" alt="">
-					</div>
-
-					<p class="title">Notícia número 5</p>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
-				</a>
-
-				<a href="" class="caixa-noticia">
-					<div class="img-caixa-noticia">
-						<img src="" alt="">
-					</div>
-
-					<p class="title">Notícia número 6</p>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
-				</a>
-			</div>
-		</div>
-
-		<div class="apoie">
-			<p>Gostou da ideia e quer apoiar o projeto?</p>
-			<a href="./apoio.php">Torne-se um apoiador</a>
-		</div>
-
-        <?php include 'footer.php'; ?>
-		
-	</body>
-</html>
+        return $url;
+    }

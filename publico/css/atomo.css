@@ -1,0 +1,85 @@
+@keyframes neutrino {
+	0% {
+		left: 37px;
+		top: -8px;
+	}
+	10% {
+		left: 70px;
+		top: 20px;
+	}
+	25% {
+		left: 85px;
+		top: 90px;
+	}
+	40% {
+		left: 70px;
+		top: 270px;
+	}
+	50% {
+		left: 37px;
+		top: 290px;
+	}
+	60% {
+		left: 10px;
+		top: 270px;
+	}
+	75% {
+		left: -10px;
+		top: 90px;
+	}
+	90% {
+		left: 0px;
+		top: 20px;
+	}
+}
+
+.atom {
+	width: 300px;
+	height: 300px;
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.line {
+	position: absolute;
+	top: 0;
+	left: 100px;
+	width: 98px;
+	height: 298px;
+	border: 1px solid #fff;
+	border-radius: 120px / 350px;
+}
+.line:nth-child(1) {
+}
+.line:nth-child(2) {
+	transform: rotate(55deg);
+}
+.line:nth-child(3) {
+	transform: rotate(-55deg);
+}
+.neutrino {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background:#f1f1f1;
+	border: 2px solid lightgray;
+	border-radius: 12px;
+	left: 37px;
+	top: -8px;
+	animation: neutrino 1s linear infinite;
+}
+.b {
+	animation-delay: 0.6s;
+}
+.c {
+	animation-delay: 0.3s;
+}
+.quark {
+	position: absolute;
+	top: 135px;
+	left: 135px;
+	width: 30px;
+	height: 30px;
+	background: white;
+	border-radius: 15px;
+
+}
