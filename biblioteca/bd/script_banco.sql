@@ -5,7 +5,8 @@ USE showdafisica;
 CREATE TABLE user(
 	id_user BIGINT NOT NULL AUTO_INCREMENT,
 	name_user VARCHAR(60) NOT NULL,
-	type_user CHAR(4) NOT NULL,
+	email_user VARCHAR(60) NOT NULL UNIQUE,
+	password_user VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id_user)
 );
 
@@ -43,3 +44,8 @@ CREATE TABLE overview_date(
 	PRIMARY KEY(id_date),
 	FOREIGN KEY(id_overview) REFERENCES overview(id_overview) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+INSERT INTO user(name_user, email_user, password_user) 
+VALUES
+("FabSoftware","fabsoftware@ifsp.com", "FabsoftwareIFSP"),
+("ShowdeFisica","showdefisica@ifsp.com", "123456");
