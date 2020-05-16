@@ -17,6 +17,7 @@
         if (isset($_SESSION["acesso"])) {
             $_SESSION["acesso"] = null;
             unset($_SESSION["acesso"]);
+            redirecionar(".");
         }
     }
 

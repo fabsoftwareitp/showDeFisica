@@ -11,3 +11,10 @@ function mm($valor) {
     echo "</pre>";
     die();
 }
+
+function dd($valor) { 
+    echo "<pre>";
+    print_r($valor);
+    echo "</pre>";
+    die();
+}

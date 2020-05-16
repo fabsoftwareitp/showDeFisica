@@ -8,6 +8,13 @@
         <a class="nav-link" href="pages/gallery">Galeria</a>
         <a class="nav-link" href="pages/contact">Contato</a>
         <a class="nav-link" href="pages/support">Patrocine</a>
+        <?php
+        if (isset($_SESSION["acesso"])) {
+            echo "<a href='./login/logout'>Logout</a>";
+        } else {
+            echo "<a href='./login'>Login</a>";
+        }
+        ?>
     </div>
     <label for="check">Menu</label>
 </div>

@@ -8,13 +8,11 @@ function index() {
     if (ehPost()) {
         extract($_POST);
         $usuario = pegarUsuarioPorEmailSenha($email, $senha);
-        print_r($usuario);
-        
         if (acessoLogar($usuario)) {
-            //alert("bem vindo" . $login);
+            echo "<script> alert('Bem vindo '.$login)</script>";
             redirecionar("usuario");
         } else {
-            alert("usuario ou senha invalidos!");
+            echo "<script> alert('usuario ou senha invalidos!')</script>";
         }
     }
     exibir("login/index");
@@ -23,7 +21,7 @@ function index() {
 /** anon */
 function logout() {
     acessoDeslogar();
-    //alert("deslogado com sucesso!");
+    echo "<script> alert('deslogado com sucesso!')</script>";
     redirecionar("usuario");
 }
 
