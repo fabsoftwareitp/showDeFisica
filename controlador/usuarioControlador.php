@@ -19,11 +19,13 @@ function adicionar() {
         exibir("usuario/formulario");
     }
 }
+
 /** admin */
 function deletar($id) {
     deletarUsuario($id);
     redirecionar("usuario/index");
 }
+
 /** admin */
 function editar($id) {
     if (ehPost()) {
