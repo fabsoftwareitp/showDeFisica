@@ -5,8 +5,8 @@
     function acessoLogar($usuario) {
         if(!empty($usuario)) {
             $_SESSION["acesso"] = array(
-                "email" => $usuario["email"], 
-                "type" => $usuario["type"]
+                "email" => $usuario["email_user"], 
+                "papel" => "admin"
             );
             return true; 
         }

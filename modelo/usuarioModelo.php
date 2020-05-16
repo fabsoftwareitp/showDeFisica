@@ -1,7 +1,7 @@
 <?php
 
 function pegarTodosUsuarios() {
-    $sql = "SELECT * FROM usuario";
+    $sql = "SELECT * FROM user";
     $resultado = mysqli_query(conn(), $sql);
     $usuarios = array();
     while ($linha = mysqli_fetch_assoc($resultado)) {
@@ -11,29 +11,29 @@ function pegarTodosUsuarios() {
 }
 
 function pegarUsuarioPorId($id) {
-    $sql = "SELECT * FROM usuario WHERE id= $id";
+    $sql = "SELECT * FROM user WHERE id_user = $id";
     $resultado = mysqli_query(conn(), $sql);
     $usuario = mysqli_fetch_assoc($resultado);
     return $usuario;
 }
 
 function adicionarUsuario($nome, $email, $senha) {
-    $sql = "INSERT INTO usuario (nome, email, senha) 
-			VALUES ('$nome', '$email', '$senha')";
+    $sql = "INSERT INTO user(name_user, email_user, password_user) 
+			VALUES ('$nome', '$email', '$senha');";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar usuário' . mysqli_error($cnx)); }
     return 'Usuario cadastrado com sucesso!';
 }
 
 function editarUsuario($id, $nome, $email) {
-    $sql = "UPDATE usuario SET nome = '$nome', email = '$email' WHERE id = $id";
+    $sql = "UPDATE user SET name_user = '$nome', email_user = '$email' WHERE id_user = $id";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao alterar usuário' . mysqli_error($cnx)); }
     return 'Usuário alterado com sucesso!';
 }
 
 function deletarUsuario($id) {
-    $sql = "DELETE FROM usuario WHERE id = $id";
+    $sql = "DELETE FROM user WHERE id_user = $id";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao deletar usuário' . mysqli_error($cnx)); }
     return 'Usuario deletado com sucesso!';
@@ -41,7 +41,7 @@ function deletarUsuario($id) {
 }
 
 function pegarUsuarioPorEmailSenha($email, $senha) {
-    $sql = "SELECT * FROM usuario WHERE email= '$email' and senha = '$senha'";
+    $sql = "SELECT * FROM user WHERE email_user = '$email' and password_user = '$senha'";
     $resultado = mysqli_query(conn(), $sql);
     $usuario = mysqli_fetch_assoc($resultado);
     return $usuario;
