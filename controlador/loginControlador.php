@@ -10,7 +10,7 @@ function index() {
         $usuario = pegarUsuarioPorEmailSenha($email, $senha);
         if (acessoLogar($usuario)) {
             echo "<script> alert('Bem vindo '.$login)</script>";
-            redirecionar("usuario");
+            redirecionar("pages/dashboard");
         } else {
             echo "<script> alert('usuario ou senha invalidos!')</script>";
         }
@@ -22,7 +22,7 @@ function index() {
 function logout() {
     acessoDeslogar();
     echo "<script> alert('deslogado com sucesso!')</script>";
-    redirecionar("usuario");
+    redirecionar("pages/");
 }
 
 ?>

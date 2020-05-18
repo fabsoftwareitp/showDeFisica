@@ -10,9 +10,10 @@
         <a class="nav-link" href="pages/support">Patrocine</a>
         <?php
         if (isset($_SESSION["acesso"])) {
-            echo "<a href='./login/logout'>Logout</a>";
+            echo "<a href='login/logout'>Logout</a>";
+            echo "<a href='pages/dashboard'>Dashboard</a>";
         } else {
-            echo "<a href='./login'>Login</a>";
+            echo "<a href='login/'>Login</a>";
         }
         ?>
     </div>

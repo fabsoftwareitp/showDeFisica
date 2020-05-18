@@ -11,6 +11,10 @@
 		exibir("paginas/about");
 	}
 
+	function dashboard() {
+		exibir("paginas/dashboard");
+	}
+
 	function overview(){
 		exibir("paginas/overview");
 	}

@@ -7,6 +7,7 @@ function index() {
     $dados["usuarios"] = pegarTodosUsuarios();
     exibir("usuario/listar", $dados);
 }
+
 /** admin */
 function adicionar() {
     if (ehPost()) {
