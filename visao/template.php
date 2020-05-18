@@ -24,6 +24,8 @@
 	<body>
 		<?php include 'cabecalho.php';?>
 
+		<?php alertComponentRender(); ?>
+		
 		<main class="container">
 			<?php require $viewFilePath; ?>
 		</main>

@@ -6,6 +6,8 @@
     require_once 'biblioteca/mysqli.php';
     require_once 'biblioteca/visao.php';
     require_once 'biblioteca/uteis.php';
+    require_once 'biblioteca/alert.php';
+    require_once 'biblioteca/acesso.php';
 
     require_once 'app.php'; //arquivo geral da aplicacao
 
