@@ -153,58 +153,58 @@ padding:0
 }
 @media print{
 *,*:before,*:after{
-	color:#000!important;
-	text-shadow:none!important;
-	background:transparent!important;
-	-webkit-box-shadow:none!important;
-	box-shadow:none!important
+color:#000!important;
+text-shadow:none!important;
+background:transparent!important;
+-webkit-box-shadow:none!important;
+box-shadow:none!important
 }
 a,a:visited{
-	text-decoration:underline
+text-decoration:underline
 }
 a[href]:after{
-	content:" (" attr(href) ")"
+content:" (" attr(href) ")"
 }
 abbr[title]:after{
-	content:" (" attr(title) ")"
+content:" (" attr(title) ")"
 }
 a[href^="#"]:after,a[href^="javascript:"]:after{content:""}pre,blockquote{
-	border:1px solid #999;
-	page-break-inside:avoid
+border:1px solid #999;
+page-break-inside:avoid
 }
 thead{
-	display:table-header-group
+display:table-header-group
 }
 tr,img{
-	page-break-inside:avoid
+page-break-inside:avoid
 }
 img{
-	max-width:100%!important
+max-width:100%!important
 }
 p,h2,h3{
-	orphans:3;
-	widows:3
+orphans:3;
+widows:3
 }
 h2,h3{
-	page-break-after:avoid
+page-break-after:avoid
 }
 .navbar{
-	display:none
+display:none
 }
 .btn>.caret,.dropup>.btn>.caret{
-	border-top-color:#000!important
+border-top-color:#000!important
 }
 .label{
-	border:1px solid #000
+border:1px solid #000
 }
 .table{
-	border-collapse:collapse!important
+border-collapse:collapse!important
 }
 .table td,.table th{
-	background-color:#fff!important
+background-color:#fff!important
 }
 .table-bordered th,.table-bordered td{
-	border:1px solid #ddd!important
+border:1px solid #ddd!important
 }
 }
 .glyphicon{
@@ -5751,25 +5751,21 @@ display:inline-block!important
 .hidden-xs{
 display:none!important
 }
-
 }
 @media (min-width:768px) and (max-width:991px){
 .hidden-sm{
 display:none!important
 }
-
 }
 @media (min-width:992px) and (max-width:1199px){
 .hidden-md{
 display:none!important
 }
-
 }
 @media (min-width:1200px){
 .hidden-lg{
 display:none!important
 }
-
 }
 .visible-print{
 display:none!important
@@ -5787,14 +5783,13 @@ display:table-row!important
 th.visible-print,td.visible-print{
 display:table-cell!important
 }
-
 }
 .visible-print-block{
 display:none!important
 }
 @media print{
 .visible-print-block{
-	display:block!important
+display:block!important
 }
 }
 .visible-print-inline{
@@ -5802,7 +5797,7 @@ display:none!important
 }
 @media print{
 .visible-print-inline{
-	display:inline!important
+display:inline!important
 }
 }
 .visible-print-inline-block{
@@ -5810,11 +5805,11 @@ display:none!important
 }
 @media print{
 .visible-print-inline-block{
-	display:inline-block!important
+display:inline-block!important
 }	
 }
 @media print{
 .hidden-print{
-	display:none!important
+display:none!important
 }
 }

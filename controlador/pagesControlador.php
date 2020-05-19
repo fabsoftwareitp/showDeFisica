@@ -1,39 +1,34 @@
 <?php
 
-	// require_once 'modelo/newsModelo.php';
-	// require_once 'modelo/galleryModelo.php';
+require_once 'modelo/newsModelo.php';
+// require_once 'modelo/galleryModelo.php';
 
-	/** anon */
-	function index(){
-		exibir("paginas/index");
-	}
+/** anon */
+function index(){
+	$dados['news'] = pegarTodasNews();
+	exibir("paginas/index", $dados);
+}
 
-	/** anon */
-	function about() {
-		exibir("paginas/about");
-	}
+/** anon */
+function about() {
+	exibir("paginas/about");
+}
 
-	/** admin */
-	function dashboard() {
-		exibir("paginas/dashboard");
-	}
+/** admin */
+function dashboard() {
+	exibir("paginas/dashboard");
+}
 
-	/** anon */
-	function overview(){
-		exibir("paginas/overview");
-	}
-
-	/** anon */
-	function contact() {
+/** anon */
+function contact() {
+	if(ehPost()):
+		$remetente = $_POST["nome"];
+		$endereco = $_POST["email"];
+		$interesse = $_POST["interesse"];
+		$mensagem = $_POST["mensagem"];
+		
+		echo $remetente."<br>".$endereco."<br>".$mensagem."<br>".$interesse;
+	else:
 		exibir("paginas/contact");
-	}
-
-	/** anon */
-	function gallery(){
-		exibir("paginas/gallery");
-	}
-
-	/** anon */
-	function support() {
-		exibir("paginas/support");
-	}
+	endif;
+}

@@ -20,7 +20,7 @@ CREATE TABLE news(
 
 CREATE TABLE gallery(
 	id_image BIGINT NOT NULL AUTO_INCREMENT,
-	path_image VARCHAR(100),
+	path_image VARCHAR(200) NOT NULL,
 	PRIMARY KEY(id_image)
 );
 
@@ -29,7 +29,7 @@ CREATE TABLE diary(
 	title VARCHAR(40) NOT NULL,
 	subtitle VARCHAR(60) NOT NULL,
 	city VARCHAR(30) NOT NULL,
-	date_show DATE(30) NOT NULL,
+	date_show DATE NOT NULL,
 	local_show VARCHAR(30) NOT NULL,
 	banner VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id_overview)

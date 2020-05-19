@@ -1,11 +1,16 @@
 <?php
 
-	function uploadImage($name, $tmpname, $path){
-		$extension = strtolower(substr($name, -4));
+function uploadImage($array_Imagem, $path){
+	$type = $array_Imagem["images"]["type"];
+	$tmp_name = $array_Imagem["images"]["tmp_name"];
+	$size = $array_Imagem["images"]["size"];
 
-		if(($extension == '.jpg') || ($extension == '.png') || ($extension == '.gif')):
+	$extension = explode("/", $type);
 
-			$diretory = './img/';
+	if(($extension[1] == 'jpeg') || ($extension[1] == 'jpg') || ($extension[1] == 'png') || ($extension[1] == 'gif')):
+
+		// if($size < 150000):
+			$diretory = 'publico/img/';
 
 			if ($path == 'G'):
 				$diretory .= 'gallery/';
@@ -13,11 +18,14 @@
 				$diretory .= 'news/';
 			endif;
 
-			$name = md5(time()).$extension;
-			move_uploaded_file($tmpname, $diretory.$name);
+			$name = md5(time()).'.'.$extension[1];
+			move_uploaded_file($tmp_name, $diretory.$name);
 
-			echo $diretory.$name;
-		else:
-			return false;
-		endif;
-	}
+			return $diretory.$name;
+		// else:
+		// 	return false;
+		// endif;
+	else:
+		return false;
+	endif;
+}

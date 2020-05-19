@@ -1,6 +1,7 @@
 <?php
 
 require_once "modelo/newsModelo.php";
+require_once "servico/uploadServico.php";
 
 /** admin */
 function index(){
@@ -13,7 +14,7 @@ function adicionar() {
     if (ehPost()) {
         $title = $_POST["title"];
         $subtitle = $_POST["subtitle"];
-        $images = $_POST["images"];
+        $images = uploadImage($_FILES, "N");
         adicionarNew($title, $subtitle, $images);
         redirecionar("news/index");
     } else {
@@ -23,6 +24,9 @@ function adicionar() {
 
 /** admin */
 function deletar($id) {
+    $new = pegarNewPorId($id);
+    unlink($new['images']);
+    unset($new);
     deletarNew($id);
     redirecionar("news/index");
 }
@@ -32,11 +36,11 @@ function editar($id) {
     if (ehPost()) {
         $title = $_POST["title"];
         $subtitle = $_POST["subtitle"];
-        $image = $_POST["image"];
-        editarNew($id, $title, $subtitle,$image);
+        $images = uploadImage($_FILES, "N");
+        editarNew($id, $title, $subtitle,$images);
         redirecionar("news/index");
     } else {
-        $dados["news/index"] = pegarNewPorId($id);
+        $dados["news"] = pegarNewPorId($id);
         exibir("news/formulario", $dados);
     }
 }

@@ -24,5 +24,3 @@ function logout() {
     echo "<script> alert('deslogado com sucesso!')</script>";
     redirecionar("pages/");
 }
-
-?>

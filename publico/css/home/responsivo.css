@@ -1,14 +1,4 @@
-/* ----- MOBILE (320px-425px) ----- */
 @media only screen and (min-width: 320px) and (max-width: 425px){
-	.header .links-menu .nav-link{
-		font-size: 18px;
-	}
-	.header .links-menu	.nav-link:hover{
-		font-size: 22px;
-		letter-spacing: 2px;
-	}
-
-
 	.welcome{
 		height: 250px;
 	}
@@ -111,9 +101,6 @@
 	}
 
 
-	/* ---------- GALERIA ---------- */
-
-
 	.descricao-noticia{
 		height: 180px;
 	}
@@ -145,32 +132,9 @@
 		font-size: 12px;
 		padding: 5px 8px;
 	}
-
-
-	.footer{
-		height: 140px;
-	}
-	.link-web img{
-		width: 30px;
-		height: 30px;
-	}
-	.footer p{
-		font-size: 12px;
-	}
 }
 
-
-/* ----- TABLET (426px-768px) ----- */
 @media only screen and (min-width: 426px) and (max-width: 768px){
-	.header .links-menu .nav-link{
-		font-size: 20px;
-	}
-	.header .links-menu	.nav-link:hover{
-		font-size: 24px;
-		letter-spacing: 3px;
-	}
-
-
 	.welcome{
 		height: 350px;
 	}
@@ -274,9 +238,6 @@
 	}
 
 
-	/* ---------- GALERIA ---------- */
-
-
 	.caixa-noticia{
 		width: 300px;
 	}
@@ -307,22 +268,8 @@
 		font-size: 16px;
 		padding: 7px 10px;
 	}
-
-
-	.footer{
-		height: 140px;
-	}
-	.link-web img{
-		width: 45px;
-		height: 45px;
-	}
-	.footer p{
-		font-size: 14px;
-	}
 }
 
-
-/* ----- LAPTOP (769px-1024px) ----- */
 @media only screen and (min-width: 769px) and (max-width: 1024px){
 	.welcome{
 		height: 450px;
@@ -454,22 +401,8 @@
 		font-size: 18px;
 		padding: 5px 10px;
 	}
-
-
-	.footer{
-		height: 160px;
-	}
-	.link-web img{
-		width: 50px;
-		height: 50px;
-	}
-	.footer p{
-		font-size: 16px;
-	}
 }
 
-
-/* ----- LAPTOP Large (1025px-1440px) ----- */
 @media only screen and (min-width: 1025px) and (max-width: 1440px){
 	.welcome{
 		height: 450px;
@@ -601,17 +534,5 @@
 	.apoie a{
 		font-size: 18px;
 		padding: 5px 10px;
-	}
-
-
-	.footer{
-		height: 160px;
-	}
-	.link-web img{
-		width: 50px;
-		height: 50px;
-	}
-	.footer p{
-		font-size: 16px;
 	}
 }
