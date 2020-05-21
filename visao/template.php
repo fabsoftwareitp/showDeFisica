@@ -20,5 +20,6 @@
 		</main>
 
 		<?php include 'rodape.php';?>
+		<script src="publico/js/index.js"></script>
 	</body>
 </html>

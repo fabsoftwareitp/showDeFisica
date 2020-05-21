@@ -403,7 +403,7 @@
 	}
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1440px){
+@media only screen and (min-width: 1025px){
 	.welcome{
 		height: 450px;
 	}

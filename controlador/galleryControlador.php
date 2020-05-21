@@ -18,3 +18,12 @@ function adicionar(){
 		redirecionar("gallery/");
 	endif;
 }
+
+/** admin */
+function deletar($id){
+	$imagem = pegarImagemPorId($id);
+	deletarGallery($id);
+	unlink($imagem['path_image']);
+	unset($imagem);
+	redirecionar("gallery/");
+}
