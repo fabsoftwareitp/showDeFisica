@@ -1,3 +1,7 @@
+
+<head>
+<link rel="stylesheet" type="text/css" href="./publico/css/bootstrap.min.css">
+</head>
 <div class="container abt">
 	<div class="row">
 		<div class='square col-md-6'>
