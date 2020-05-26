@@ -1,3 +1,7 @@
+
+<head>
+<link rel="stylesheet" type="text/css" href="./publico/css/bootstrap.min.css">
+</head>
 <h2>Listar Todas Noticias</h2>
 
 <table class="table">
