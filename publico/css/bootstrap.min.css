@@ -1,18 +1,11 @@
-@font-face{
-src:url(../fonts/glyphicons-halflings-regular.eot);
-src:url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),
-url(../fonts/glyphicons-halflings-regular.woff2) format("woff2"),
-url(../fonts/glyphicons-halflings-regular.woff) format("woff"),
-url(../fonts/glyphicons-halflings-regular.ttf) format("truetype"),
-url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+
 html{
 -webkit-text-size-adjust:100%;
 -ms-text-size-adjust:100%
 }
-body{
-margin:0
-}
+
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
 display:block
 }
@@ -1013,18 +1006,7 @@ box-sizing:border-box
 -moz-box-sizing:border-box;
 box-sizing:border-box
 }
-html{
-font-size:10px;
--webkit-tap-highlight-color:rgba(0,0,0,0)
-}
-body{
-font-size:14px;
-line-height:1.42857143;
-color:#333;
-background-color:#fff
-}
 input,button,select,textarea{
-font-family:inherit;
 font-size:inherit;
 line-height:inherit
 }
@@ -1098,7 +1080,6 @@ clip:auto
 cursor:pointer
 }
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
-font-family:inherit;
 font-weight:500;
 line-height:1.1;
 color:inherit
@@ -1140,9 +1121,7 @@ font-size:14px
 h6,.h6{
 font-size:12px
 }
-p{
-margin:0 0 10px
-}
+
 .lead{
 margin-bottom:20px;
 font-size:16px;
@@ -5490,7 +5469,6 @@ margin-right:-10px
 .carousel-control .icon-prev,.carousel-control .icon-next{
 width:20px;
 height:20px;
-font-family:serif;
 line-height:1
 }
 .carousel-control .icon-prev:before{
