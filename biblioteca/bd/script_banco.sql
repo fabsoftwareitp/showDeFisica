@@ -9,12 +9,13 @@ CREATE TABLE user(
 	password_user VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id_user)
 );
-
+DROP TABLE IF EXISTS news;
 CREATE TABLE news(
 	id_news BIGINT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(40) NOT NULL,
 	subtitle VARCHAR(60) NOT NULL,
 	images VARCHAR(300) NOT NULL,
+	text_notice VARCHAR(2000) NOT NULL,
 	PRIMARY KEY(id_news)
 );
 
@@ -26,12 +27,12 @@ CREATE TABLE gallery(
 
 CREATE TABLE diary(
 	id_overview BIGINT NOT NULL AUTO_INCREMENT,
-	title VARCHAR(40) NOT NULL,
-	subtitle VARCHAR(60) NOT NULL,
+	title VARCHAR(60) NOT NULL,
+	subtitle VARCHAR(400) NOT NULL,
 	city VARCHAR(30) NOT NULL,
 	date_show DATE NOT NULL,
 	local_show VARCHAR(30) NOT NULL,
-	banner VARCHAR(60) NOT NULL,
+	banner VARCHAR(100) NOT NULL,
 	PRIMARY KEY(id_overview)
 );
 

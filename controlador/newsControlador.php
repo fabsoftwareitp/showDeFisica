@@ -15,8 +15,10 @@ function adicionar() {
 		$title = $_POST["title"];
 		$subtitle = $_POST["subtitle"];
 		$images = uploadImage($_FILES, "N");
-		adicionarNew($title, $subtitle, $images);
-		redirecionar("news/index");
+		$text = $_POST['noticia'];
+
+		adicionarNew($title, $subtitle, $images, $text);
+		redirecionar("news/");
 	} else {
 		exibir("news/formulario");
 	}
@@ -28,7 +30,7 @@ function deletar($id) {
 	unlink($new['images']);
 	unset($new);
 	deletarNew($id);
-	redirecionar("news/index");
+	redirecionar("news/");
 }
 
 /** admin */
@@ -37,29 +39,18 @@ function editar($id) {
 		$title = $_POST["title"];
 		$subtitle = $_POST["subtitle"];
 		$images = uploadImage($_FILES, "N");
-		editarNew($id, $title, $subtitle,$images);
-		redirecionar("news/index");
+		$text = $_POST['noticia'];
+
+		editarNew($id, $title, $subtitle,$images, $text);
+		redirecionar("news/");
 	} else {
-		$dados["news"] = pegarNewPorId($id);
+		$dados["new"] = pegarNewPorId($id);
 		exibir("news/formulario", $dados);
 	}
 }
 
 /** anon */
 function visualizar($id) {
-	// esse arquivo é um teste por enquanto, ele será substituído pelo texto da notícia
-	$local = './controlador/lorem.docx';
-	$file = fopen($local,'r');
-
-	$texto_coletado = [];
-
-	while(!feof($file)){
-		$texto_coletado[] = fgets($file);
-	}
-	fclose($file);
-
-	$dados["text"] = $texto_coletado;
-
 	$dados["new"] = pegarNewPorId($id);
 	exibir("news/visualizar", $dados);
 }

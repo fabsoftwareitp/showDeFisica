@@ -6,7 +6,7 @@
 	<div class="links-menu">
 		<a class="nav-link" href=".">Início</a>
 		<a class="nav-link" href="pages/about">Sobre</a>
-		<a class="nav-link" href="agenda/">Agenda</a>
+		<a class="nav-link" href="overview/">Agenda</a>
 		<a class="nav-link" href="gallery/">Galeria</a>
 		<a class="nav-link" href="pages/contact">Contato</a>
 		<?php if (isset($_SESSION["acesso"])) :?>

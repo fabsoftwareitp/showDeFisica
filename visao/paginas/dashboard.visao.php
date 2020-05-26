@@ -2,10 +2,10 @@
 	<p>Dashboard</p>
 	<div class="dashboard-content">
 		<div class="links">
-			<a href="usuario/">Usuarios</a>
+			<a href="usuario/">Usuários</a>
 		</div>
 		<div class="links">
-			<a href="news/">Noticias</a>
+			<a href="news/">Notícias</a>
 		</div>
 		<div class="links">
 			<a href="gallery/">Galeria</a>

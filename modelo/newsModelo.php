@@ -17,16 +17,21 @@ function pegarNewPorId($id) {
     return $new;
 }
 
-function adicionarNew($title, $subtitle, $images) {
-    $sql = "INSERT INTO news(title, subtitle, images) 
-            VALUES ('$title', '$subtitle', '$images');";
+function adicionarNew($title, $subtitle, $images, $text) {
+    $sql = "INSERT INTO news(title, subtitle, images, text_notice) 
+            VALUES ('$title', '$subtitle', '$images', '$text');";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar noticia' . mysqli_error($cnx)); }
     return 'Noticia cadastrada com sucesso!';
 }
 
-function editarNew($id, $title, $subtitle, $image) {
-    $sql = "UPDATE news SET title = '$title', subtitle = '$subtitle', images = '$image' WHERE id_news = '$id'";
+function editarNew($id, $title, $subtitle, $image, $text) {
+    $sql = "UPDATE news SET 
+        title = '$title', 
+        subtitle = '$subtitle', 
+        images = '$image',
+        text_notice = '$text' 
+        WHERE id_news = '$id'";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao alterar noticia' . mysqli_error($cnx)); }
     return 'Noticia alterado com sucesso!';

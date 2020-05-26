@@ -12,18 +12,24 @@ function uploadImage($array_Imagem, $path){
 		// if($size < 150000):
 			$diretory = 'publico/img/';
 
-			if ($path == 'G'):
-				$diretory .= 'gallery/';
-			else:
-				$diretory .= 'news/';
-			endif;
+			switch ($path) {
+				case 'B':
+					$diretory .= 'banner/';
+					break;
+				case 'G':
+					$diretory .= 'gallery/';
+					break;
+				case 'N':
+					$diretory .= 'news/';
+					break;
+			}
 
 			$name = md5(time()).'.'.$extension[1];
 			move_uploaded_file($tmp_name, $diretory.$name);
 
 			return $diretory.$name;
 		// else:
-		// 	return false;
+			// return false;
 		// endif;
 	else:
 		return false;

@@ -1,14 +1,20 @@
-<h2>Acesse o sistema</h2>
-
 <form method="POST" action="<?=@$acao?>">
 
+	<h1>Acesse o sistema</h1>
 
-    <label for="login">Email:</label>
-    <input id="login" class="form-control" type="text" name="email">
+	<div class="div-input w2">
+		<input id="login" type="text" name="email" required>
+		<label for="login">Email:</label>
+	</div>
 
-    <label for="passwd">Senha:</label>
-    <input id="passwd" class="form-control" type="password" name="senha">
+	<div class="div-input w2">
+		<input id="passwd" type="password" name="senha" required>
+		<label for="passwd">Senha:</label>
+	</div>
 
-    <button type="submit" class="btn btn-primary">Acessar</button>
-
+	<div class="form-navigation">
+		<button type="reset">Limpar</button>
+		<button type="submit">Acessar</button>
+	</div>
+		
 </form>

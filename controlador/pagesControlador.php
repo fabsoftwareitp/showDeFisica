@@ -1,7 +1,6 @@
 <?php
 
 require_once 'modelo/newsModelo.php';
-// require_once 'modelo/galleryModelo.php';
 
 /** anon */
 function index(){
