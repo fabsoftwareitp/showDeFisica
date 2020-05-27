@@ -9,9 +9,11 @@
 		<link rel="stylesheet" href="publico/css/index.css">
 		<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		
 	</head>
 
 	<body>
+	
 		<?php include 'cabecalho.php';?>
 
 		<?php alertComponentRender(); ?>
@@ -22,5 +24,6 @@
 
 		<?php include 'rodape.php';?>
 		<script src="publico/js/index.js"></script>
+
 	</body>
 </html>

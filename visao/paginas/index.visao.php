@@ -1,3 +1,4 @@
+
 <div class="welcome">
 	<img src="publico/img/elements/ausronauta.png">
 	<p>Um novo jeito de aprender <span>ciência</span></p>
