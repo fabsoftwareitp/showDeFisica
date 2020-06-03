@@ -22,7 +22,7 @@
 	
 		<div class="image-preview" id="imagePreview">
 			<?php if(isset($new)): ?>
-				<img src="<?=@$new['images']?>" width="100%">
+				<img src="<?=@$new['images']?>" width="auto" height="100%">
 			<?php else: ?>
 				<img src="" alt="Image Preview" class="image-preview__image">
 				<p class="image-preview__default-text">Prévia</p>

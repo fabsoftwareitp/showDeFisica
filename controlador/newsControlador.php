@@ -41,10 +41,14 @@ function editar($id) {
 	if (ehPost()) {
 		$title = $_POST["title"];
 		$subtitle = $_POST["subtitle"];
-		$images = uploadImage($_FILES, "N");
 		$text = $_POST['noticia'];
 
-		editarNew($id, $title, $subtitle,$images, $text);
+		$nome = $_FILES['images']['name'];
+		$tmp_name = $_FILES['images']['tmp_name'];
+		$type = $_FILES['images']['type'];
+		$image = uploadImage($nome, $tmp_name, $type, 'N');
+	
+		editarNew($id, $title, $subtitle,$image, $text);
 		redirecionar("news/");
 	} else {
 		$dados["new"] = pegarNewPorId($id);
