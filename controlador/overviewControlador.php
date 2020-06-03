@@ -17,7 +17,11 @@ function adicionar(){
 		$day = $_POST['day'];
 		$month = $_POST['month'];
 		$year = $_POST['year'];
-		$image = uploadImage($_FILES, "B");
+
+		$nome = $_FILES['images']['name'];
+		$tmp_name = $_FILES['images']['tmp_name'];
+		$type = $_FILES['images']['type'];
+		$image = uploadImage($nome, $tmp_name, $type, 'B');
 
 		$data = $year.'-'.$month.'-'.$day;
 		adicionarEvento($title, $subtitle, $city, $data, $local, $image);

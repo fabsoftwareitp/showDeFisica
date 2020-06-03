@@ -14,10 +14,14 @@ function adicionar() {
 	if (ehPost()) {
 		$title = $_POST["title"];
 		$subtitle = $_POST["subtitle"];
-		$images = uploadImage($_FILES, "N");
 		$text = $_POST['noticia'];
 
-		adicionarNew($title, $subtitle, $images, $text);
+		$nome = $_FILES['images']['name'];
+		$tmp_name = $_FILES['images']['tmp_name'];
+		$type = $_FILES['images']['type'];
+		$image = uploadImage($nome, $tmp_name, $type, 'N');
+
+		adicionarNew($title, $subtitle, $image, $text);
 		redirecionar("news/");
 	} else {
 		exibir("news/formulario");
@@ -28,7 +32,6 @@ function adicionar() {
 function deletar($id) {
 	$new = pegarNewPorId($id);
 	unlink($new['images']);
-	unset($new);
 	deletarNew($id);
 	redirecionar("news/");
 }
