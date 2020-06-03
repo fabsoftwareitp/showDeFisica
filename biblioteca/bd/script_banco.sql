@@ -9,7 +9,7 @@ CREATE TABLE user(
 	password_user VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id_user)
 );
-DROP TABLE IF EXISTS news;
+
 CREATE TABLE news(
 	id_news BIGINT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(40) NOT NULL,
