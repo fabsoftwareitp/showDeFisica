@@ -6,7 +6,7 @@
 			<button class="submit-image" type="submit">Adicionar</button>
 		</div>
 
-		<input type="file" name="images" id="images" hidden>
+		<input type="file" name="images[]" id="images" hidden multiple>
 
 		<div class="image-preview" id="imagePreview">
 			<img src="" alt="Image Preview" class="image-preview__image">

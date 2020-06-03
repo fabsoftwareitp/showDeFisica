@@ -11,8 +11,7 @@
   }
   
   a {
- 
-      font-size: 14px;
+    font-size: 14px;
       line-height: 1.7;
         margin: 0px;
       transition: all 0.4s;
@@ -47,7 +46,7 @@
   }
   
   
-  /*---------------------------------------------*/
+
   input {
       outline: none;
       border: none;
@@ -82,7 +81,6 @@
   textarea::-moz-placeholder { color: #adadad;}
   textarea:-ms-input-placeholder { color: #adadad;}
   
-  /*---------------------------------------------*/
   button {
       outline: none !important;
       border: none;
@@ -98,8 +96,6 @@
   }
   
   
-  /*//////////////////////////////////////////////////////////////////
-  [ Utility ]*/
   .txt1 {
 
     font-size: 15px;
@@ -113,9 +109,6 @@
     color: #da3241;
     line-height: 1.5;
   }
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ login ]*/
   
   .limiter {
     width: 100%;
@@ -143,9 +136,6 @@
   }
   
   
-  /*------------------------------------------------------------------
-  [ Form ]*/
-  
   .login100-form {
     width: 100%;
   }
@@ -171,9 +161,6 @@
     width: 100%;
   }
   
-  /*------------------------------------------------------------------
-  [ Input ]*/
-  
   .wrap-input100 {
     width: 100%;
     position: relative;
@@ -192,7 +179,6 @@
     padding: 0 5px;
   }
   
-  /*---------------------------------------------*/ 
   .focus-input100 {
     position: absolute;
     display: block;
@@ -258,8 +244,6 @@
   }
   
   
-  /*------------------------------------------------------------------
-  [ Button ]*/
   .container-login100-form-btn {
     width: 100%;
     display: -webkit-box;
@@ -306,8 +290,6 @@
   
   
   
-  /*------------------------------------------------------------------
-  [ Alert validate ]*/
   
   .validate-input {
     position: relative;
@@ -375,9 +357,6 @@
     }
   }
   
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ Login more ]*/
   .login-more li {
     position: relative;
     padding-left: 16px;
