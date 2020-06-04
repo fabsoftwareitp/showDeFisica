@@ -1,45 +1,54 @@
 <?php
 
 function pegarTodasNews() {
+    $cnx = conn();
     $sql = "SELECT * FROM news";
-    $resultado = mysqli_query(conn(), $sql);
+    $resultado = $cnx->query($sql);
     $news = array();
-    while ($linha = mysqli_fetch_assoc($resultado)) {
-        $news[] = $linha;
+    if($resultado){
+        foreach($resultado as $col){
+            $news[] = $col;
+        }
     }
     return $news;
 }
 
 function pegarNewPorId($id) {
+    $cnx = conn();
     $sql = "SELECT * FROM news WHERE id_news = '$id'";
-    $resultado = mysqli_query(conn(), $sql);
-    $new = mysqli_fetch_assoc($resultado);
+    $resultado = $cnx->query($sql);
+    foreach($resultado as $col){
+        $new = $col;
+    }
     return $new;
 }
 
 function adicionarNew($title, $subtitle, $images, $text) {
+    $cnx = conn();
     $sql = "INSERT INTO news(title, subtitle, images, text_notice) 
-            VALUES ('$title', '$subtitle', '$images', '$text');";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao cadastrar noticia' . mysqli_error($cnx)); }
+            VALUES ('$title', '$subtitle', '$images', '$text')";
+    $resultado = $cnx->query($sql);
+    if(!$resultado) { die('Erro ao cadastrar noticia'); }
     return 'Noticia cadastrada com sucesso!';
 }
 
 function editarNew($id, $title, $subtitle, $image, $text) {
+    $cnx = conn();
     $sql = "UPDATE news SET 
         title = '$title', 
         subtitle = '$subtitle', 
         images = '$image',
         text_notice = '$text' 
         WHERE id_news = '$id'";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao alterar noticia' . mysqli_error($cnx)); }
+    $resultado = $cnx->query($sql);
+    if(!$resultado) { die('Erro ao alterar noticia'); }
     return 'Noticia alterado com sucesso!';
 }
 
 function deletarNew($id) {
+    $cnx = conn();
     $sql = "DELETE FROM news WHERE id_news = '$id'";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao deletar usuário' . mysqli_error($cnx)); }
+    $resultado = $cnx->query($sql);
+    if(!$resultado) { die('Erro ao deletar usuário'); }
     return 'New deletado com sucesso!';
 }

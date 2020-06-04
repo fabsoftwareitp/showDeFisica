@@ -1,6 +1,6 @@
 <form action="<?=@$acao?>" method="POST">
 	<h1>Usuário</h1>
-	
+
 	<div class="div-org">
 		<div class="div-input w2">
 			<input type="text" name="nome" id="nome" value="<?=@$usuario['name_user']?>" required>
@@ -12,7 +12,7 @@
 			<label for="email">Email</label>
 		</div>
 	</div>
-	
+
 	<div class="div-org">
 		<div class="div-input w2">
 			<input type="password" name="senha" id="pass" value="<?=@$usuario['password_user']?>" required>

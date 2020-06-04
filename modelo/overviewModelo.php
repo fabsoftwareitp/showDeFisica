@@ -1,6 +1,7 @@
 <?php
 
 function adicionarEvento($title, $subtitle, $city, $date_show, $local_show, $banner){
+	$cnx = conn();
 	$sql = "INSERT INTO diary VALUES(
 		NULL,
 		'$title',
@@ -10,13 +11,13 @@ function adicionarEvento($title, $subtitle, $city, $date_show, $local_show, $ban
 		'$local_show',
 		'$banner'
 	)";
-	echo $sql;
-	$resultado = mysqli_query($cnx = conn(), $sql);
-	if(!$resultado) { die('Erro ao adicionar evento' . mysqli_error($cnx)); }
+	$resultado = $cnx->query($sql);
+	if(!$resultado) { die('Erro ao adicionar evento'); }
 	return 'Evento adicionado com sucesso!';
 }
 
 function editarEvento($id, $title, $subtitle, $city, $date_show, $local_show, $banner){
+	$cnx = conn();
 	$sql = "UPDATE diary SET
 		title = '$title',
 		subtitle = '$subtitle',
@@ -25,32 +26,38 @@ function editarEvento($id, $title, $subtitle, $city, $date_show, $local_show, $b
 		local_show = '$local_show', 
 		banner = '$banner' 
 	WHERE id_overview = '$id'";
-
-	$resultado = mysqli_query($cnx = conn(), $sql);
-	if(!$resultado) { die('Erro ao alterar evento' . mysqli_error($cnx)); }
+	$resultado = $cnx->query($sql);
+	if(!$resultado) { die('Erro ao alterar evento'); }
 	return 'Evento alterado com sucesso!';
 }
 
 function deletarEvento($id){
+	$cnx = conn();
 	$sql = "DELETE FROM diary WHERE id_overview = '$id'";
-	$resultado = mysqli_query($cnx = conn(), $sql);
-	if(!$resultado) { die('Erro ao remover evento' . mysqli_error($cnx)); }
+	$resultado = $cnx->query($sql);
+	if(!$resultado) { die('Erro ao remover evento'); }
 	return 'Evento removido com sucesso!';
 }
 
 function visualizarEvento($id){
-	$sql = "SELECT *,DATE_FORMAT(date_show, '%d-%m-%Y') AS date_show  FROM diary WHERE id_overview = '$id'";
-	$resultado = mysqli_query(conn(), $sql);
-	$evento = mysqli_fetch_assoc($resultado);
+	$cnx = conn();
+	$sql = "SELECT *,DATE(date_show, '%d-%m-%Y') AS date_show  FROM diary WHERE id_overview = '$id'";
+	$resultado = $cnx->query($sql);
+	foreach($resultado as $col){
+        $evento = $col;
+    }
 	return $evento;
 }
 
 function pegarTodosEventos(){
-	$sql = "SELECT *,DATE_FORMAT(date_show, '%d-%m-%Y') AS date_show FROM diary";
-	$resultado = mysqli_query(conn(), $sql);
+	$cnx = conn();
+	$sql = "SELECT *,DATE(date_show, '%d-%m-%Y') AS date_show FROM diary";
+	$resultado = $cnx->query($sql);
 	$eventos = array();
-	while ($linha = mysqli_fetch_assoc($resultado)) {
-		$eventos[] = $linha;
+	if($resultado){
+		foreach($resultado as $col){
+			$eventos[] = $col;
+		}
 	}
 	return $eventos;
 }

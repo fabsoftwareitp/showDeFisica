@@ -4,8 +4,7 @@ function verificarImagem($type, $error, $size){
 
 	if(($type == 'image/jpeg') || ($type == 'image/png') || ($type == 'image/gif')){
 		if($error = 0){
-			// não sei como calcula esse tamanho, se alguém souber, pode colocar aqui
-			if($size < 1000000000){
+			if($size < 1000000){
 				return true;
 			} else { return "Imagem muito grande."; }
 		} else { return "A imagem apresenta erros de upload."; }
@@ -31,9 +30,10 @@ function uploadImage($nome, $tmp_name, $type, $path){
 
 	$extension = explode("/", $type);
 
-	$name = $diretory.md5($nome).md5(time()).'.'.$extension[1];
+	$caminhoImagem = $diretory.md5($nome).'.'.$extension[1];
 
-	move_uploaded_file($tmp_name, $name);
+	move_uploaded_file($tmp_name, $caminhoImagem);
 
-	return $name;
+	return $caminhoImagem;
+
 }

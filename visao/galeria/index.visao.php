@@ -25,7 +25,7 @@
 				</div>
 			<?php endif;?>
 
-			<img src="<?=$image['path_image']?>" alt="">
+			<img src="<?=$image['path_image']?>">
 		</div>
 	<?php endforeach;?>
 </div>
