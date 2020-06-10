@@ -1,4 +1,3 @@
-
 <div class="welcome">
 	<img src="publico/img/elements/ausronauta.png">
 	<p>Um novo jeito de aprender <span>ciência</span></p>
@@ -29,126 +28,41 @@
 </div>
 
 <div class="agenda fundo">
-	<input type="radio" name="nav-agenda" id="n1" checked>
-	<input type="radio" name="nav-agenda" id="n2">
-	<input type="radio" name="nav-agenda" id="n3">
 
-	<p class="title-slide">Agenda</p>
+	<p class="title-slider">Agenda</p>
 
-	<div class="slide">
-		<div class="item-list">
-			<div class="description">
-				<p class="info-title">Itapetininga</p>
-				<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus </p>
-			</div>
+	<div class="eventos">
+		<div class="slider">
+			<?php foreach($events as $event):?>
+				<?php $data = explode('-',$event['date_show']);?>
 
-			<div class="banners">
-				<div class="date">
-					<img src="publico/img/banner/cartaz 25.09.19.jpeg" alt="">
+				<div class="item-slider">
+					<div class="content-slide">
+						<div class="description">
+							<div class="dataevento">
+								<p><?=$event['city']?> - <?=$data[2].'/'.$data[1].'/'.$data[0]?></p>
+							</div>
 
-					<div class="saiba-mais">
-						<p>25 set</p>
-						<a href="">Saiba-mais &#10148;</a>
+							<div class="descricaoevento">
+								<p><?=$event['title']?></p>
+								<p><?=$event['subtitle']?></p>
+							</div>
+
+							<a href="overview/visualizar/<?=$event['id_overview']?>" class="linkevento">Saiba mais</a>
+						</div>
+
+						<div class="description-banner">
+							<img src="<?=$event['banner']?>">
+
+							<?php
+								$address = str_replace(" ", "+", $event['local_show']);
+							?>
+							<iframe src="https://maps.google.com/maps?q=<?=$address?>&output=embed" frameborder="0"></iframe>
+						</div>
 					</div>
 				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia 19.10.png" alt="">
-
-					<div class="saiba-mais">
-						<p>19 out</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia feira de ciencias outubro.png" alt="">
-
-					<div class="saiba-mais">
-						<p>24 out</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-			</div>
+			<?php endforeach;?>
 		</div>
-
-		<div class="item-list">
-			<div class="description">
-				<p class="info-title">Itú</p>
-				<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus</p>
-			</div>
-
-			<div class="banners">
-				<div class="date">
-					<img src="publico/img/banner/cartaz 25.09.19.jpeg" alt="">
-
-					<div class="saiba-mais">
-						<p>18 fev</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia 19.10.png" alt="">
-
-					<div class="saiba-mais">
-						<p>20 mar</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia feira de ciencias outubro.png" alt="">
-
-					<div class="saiba-mais">
-						<p>05 abr</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="item-list">
-			<div class="description">
-				<p class="info-title">Itapeva</p>
-				<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus</p>
-			</div>
-
-			<div class="banners">
-				<div class="date">
-					<img src="publico/img/banner/cartaz 25.09.19.jpeg" alt="">
-
-					<div class="saiba-mais">
-						<p>02 jun</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia 19.10.png" alt="">
-
-					<div class="saiba-mais">
-						<p>13 ago</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia feira de ciencias outubro.png" alt="">
-
-					<div class="saiba-mais">
-						<p>11 nov</p>
-						<a href="">Saiba-mais &#10148;</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="navigation">
-		<label class="lbl-slide s1" for="n1"><div class="circle"></div></label>
-		<label class="lbl-slide s2" for="n2"><div class="circle"></div></label>
-		<label class="lbl-slide s3" for="n3"><div class="circle"></div></label>
 	</div>
 </div>
 
@@ -164,6 +78,7 @@
 		<?php if(acessoUsuarioEstaLogado()):?>
 			<a href="news/adicionar">
 				<p>Adicionar</p>
+
 				<svg id="plus-circle" class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="#da3241" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
 					<path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>

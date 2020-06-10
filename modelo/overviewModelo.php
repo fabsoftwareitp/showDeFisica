@@ -51,7 +51,7 @@ function visualizarEvento($id){
 
 function pegarTodosEventos(){
 	$cnx = conn();
-	$sql = "SELECT *,DATE(date_show, '%d-%m-%Y') AS date_show FROM diary";
+	$sql = "SELECT * FROM diary";
 	$resultado = $cnx->query($sql);
 	$eventos = array();
 	if($resultado){

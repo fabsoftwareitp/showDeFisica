@@ -1,10 +1,12 @@
 <?php
 
 require_once 'modelo/newsModelo.php';
+require_once 'modelo/overviewModelo.php';
 
 /** anon */
 function index(){
 	$dados['news'] = pegarTodasNews();
+	$dados['events'] = pegarTodosEventos();
 	exibir("paginas/index", $dados);
 }
 

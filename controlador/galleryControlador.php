@@ -10,6 +10,7 @@ function index(){
 	exibir("galeria/index", $dados);
 }
 
+/** admin */
 function deletarGaleria(){
 	deletargaleriatoda();
 	redirecionar('gallery/');

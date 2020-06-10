@@ -3,11 +3,13 @@
 require_once 'modelo/overviewModelo.php';
 require_once 'servico/uploadServico.php';
 
+/** anon */
 function index(){
 	$dados['eventos'] = pegarTodosEventos();
 	exibir("overview/index", $dados);
 }
 
+/** admin */
 function adicionar(){
 	if (ehPost()) {
 		$title = $_POST['title'];
@@ -31,6 +33,7 @@ function adicionar(){
 	}
 }
 
+/** admin */
 function editar($id){
 	if (ehPost()){
 		$title = $_POST['title'];
@@ -55,6 +58,7 @@ function editar($id){
 	}
 }
 
+/** admin */
 function deletar($id){
 	$evento = visualizarEvento($id);
 	unlink($evento['banner']);
@@ -63,6 +67,7 @@ function deletar($id){
 	redirecionar("overview/");
 }
 
+/** anon */
 function visualizar($id){
 	$dados['evento'] = visualizarEvento($id);
 	exibir("overview/visualizar", $dados);

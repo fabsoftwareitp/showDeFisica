@@ -47,3 +47,5 @@
 		<button type="submit">Concluir</button>
 	</div>
 </form>
+
+<script src="publico/js/index.js"></script>

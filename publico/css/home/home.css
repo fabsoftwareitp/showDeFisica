@@ -1,51 +1,6 @@
 @import 'responsivo.css';
+@import 'keyframes.css';
 
-/* ------- KEYFRAMES ------- */
-@keyframes jump{
-	0%{bottom: 2.5%;}
-	50%{bottom: -2.5%;}
-	100%{bottom: 2.5%;}
-}
-@keyframes spin{
-	100%{-webkit-transform: rotate(360deg);}
-}
-@keyframes neutrino {
-	0%{
-		left: 37px;
-		top: -8px;
-	}
-	10%{
-		left: 70px;
-		top: 20px;
-	}
-	25%{
-		left: 85px;
-		top: 90px;
-	}
-	40%{
-		left: 70px;
-		top: 270px;
-	}
-	50%{
-		left: 37px;
-		top: 290px;
-	}
-	60%{
-		left: 10px;
-		top: 270px;
-	}
-	75%{
-		left: -10px;
-		top: 90px;
-	}
-	90%{
-		left: 0px;
-		top: 20px;
-	}
-}
-
-
-/* -------  LAYOUT   ------- */
 .welcome{
 	position: relative;
 }
@@ -147,125 +102,84 @@
 
 .agenda{
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	position: relative;
+	height: 400px;
 }
-.agenda input{
-	display: none;
-}
-.title-slide{
-	margin: 20px auto 0 auto;
+.title-slider{
+	font-size: 30px;
+	margin: 0 0 40px 0;
+	font-weight: bold;
+	color: #ffffff;
 	text-align: center;
-	color: white;
+}
+.eventos{
+	width: 80%;
+	margin: 0 10%;
+}
+.item-slider{
+	color: #fff;
 	font-weight: bold;
-}
-.slide{
-	margin: 20px 0 0 0;
-	height: 100%;
-	width: 300%;
+	background-color: #da3241;
 	display: flex;
-	transition: all 0.5s;
-}
-.item-list{
-	display: flex;
-	flex-direction: row;
 	justify-content: center;
-	padding: 0 1%;
-	width: 100%;
-	margin: auto;
-	height: 100%;
 }
-.description{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	color: #FFFFFF;
-	padding: 0 5px 0 0;
-}
-.info-title{
-	font-weight: bold;
-}
-.info-title, .info-sub{
-	margin-top: 10px;
-}
-.banners{
-	height: 100%;
-	padding-top: 10px;
+.content-slide{
+	width: 90%;
+	height: 300px;
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
-	transition: all .5s;
-}
-.date{
-	position: relative;
-	border: 1px solid #FFFFFF;
-	transition: all 0.5s;
-}
-.date img{
-	width: 100%;
-	height: 100%;
-}
-.saiba-mais{
-	width: 100%;
-	background-color: #DA3241;
-	position: absolute;
-	z-index: 1;
-	bottom: 0;
-	left: 0;
-	font-weight: bold;
-	color: #FFFFFF;
-	transition: all 0.5s;
-}
-.saiba-mais a{
-	display: none;
-}
-.date:hover .saiba-mais{
-	background-color: #FFFFFF;
-	color: #333333;
-	font-weight: bold;
-	letter-spacing: 0px;
-}
-.date:hover .saiba-mais a{
-	display: block;
-	color: #DA3241;
-}
-.navigation{
-	width: 100%;
-	display: flex;
-	justify-content: center;
 	align-items: center;
+	background-color: transparent;
 }
-.lbl-slide{
-	width: 14px;
-	height: 14px;
-	border: 1px solid #FFFFFF;
-	margin: 0 5px;
-	border-radius: 100%;
+.description{
+	width: 40%;
+	height: 90%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.dataevento, .descricaoevento{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.dataevento{
+	font-size: 20px;
+}
+.descricaoevento{
+	font-size: 18px;
+}
+.linkevento{
+	padding: 10px 0;
+	font-size: 17px;
+	background-color: #ffffff;
+	border-radius: 3px;
+	color: #da3241;
+	width: 150px;
+	text-align: center;
 	cursor: pointer;
+	transition: all 0.5s;
 }
-.circle{
-	width: 12px;
-	height: 12px;
-	display: none;
-	background-color: #FFFFFF;
-	border-radius: 100%;
-	margin: 2px;
+.linkevento:hover{
+	background-color: #ff4a59;
+	color: #ffffff;
 }
-#n1:checked ~ .slide{
-	margin-left: 0;
+.description-banner{
+	height: 100%;
+	width: 60%;
+	display: flex;
+	flex-direction: row;
 }
-#n2:checked ~ .slide{
-	margin-left: -100%;
+.description-banner img{
+	margin: auto;
+	width: 47.5%;
+	height: 90%;
 }
-#n3:checked ~ .slide{
-	margin-left: -200%;
-}
-#n1:checked ~ .navigation .lbl-slide.s1 .circle,
-#n2:checked ~ .navigation .lbl-slide.s2 .circle,
-#n3:checked ~ .navigation .lbl-slide.s3 .circle{
-	display: block;
+.description-banner iframe{
+	margin: auto;
+	width: 47.5%;
+	height: 90%;
 }
 
 
