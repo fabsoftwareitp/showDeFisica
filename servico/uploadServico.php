@@ -1,31 +1,39 @@
 <?php
 
-function uploadImage($array_Imagem, $path){
-	$type = $array_Imagem["images"]["type"];
-	$tmp_name = $array_Imagem["images"]["tmp_name"];
-	$size = $array_Imagem["images"]["size"];
+function verificarImagem($type, $error, $size){
+
+	if(($type == 'image/jpeg') || ($type == 'image/png') || ($type == 'image/gif')){
+		if($error = 0){
+			if($size < 100000000000000000000000000){
+				return true;
+			} else { return "Imagem muito grande."; }
+		} else { return "A imagem apresenta erros de upload."; }
+	} else { return "Extensão não permitida."; }
+
+}
+
+function uploadImage($nome, $tmp_name, $type, $path){
+
+	$diretory = 'publico/img/upload/';
+
+	switch ($path) {
+		case 'B':
+			$diretory .= 'banner/';
+			break;
+		case 'G':
+			$diretory .= 'gallery/';
+			break;
+		case 'N':
+			$diretory .= 'news/';
+			break;
+	}
 
 	$extension = explode("/", $type);
 
-	if(($extension[1] == 'jpeg') || ($extension[1] == 'jpg') || ($extension[1] == 'png') || ($extension[1] == 'gif')):
+	$caminhoImagem = $diretory.md5($nome).'.'.$extension[1];
 
-		// if($size < 150000):
-			$diretory = 'publico/img/';
+	move_uploaded_file($tmp_name, $caminhoImagem);
 
-			if ($path == 'G'):
-				$diretory .= 'gallery/';
-			else:
-				$diretory .= 'news/';
-			endif;
+	return $caminhoImagem;
 
-			$name = md5(time()).'.'.$extension[1];
-			move_uploaded_file($tmp_name, $diretory.$name);
-
-			return $diretory.$name;
-		// else:
-		// 	return false;
-		// endif;
-	else:
-		return false;
-	endif;
 }

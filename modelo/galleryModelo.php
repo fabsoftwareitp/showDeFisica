@@ -1,26 +1,49 @@
 <?php
 
 function pegarTodasImagens() {
-    $sql = "SELECT * FROM gallery";
-    $resultado = mysqli_query(conn(), $sql);
-    $news = array();
-    while ($linha = mysqli_fetch_assoc($resultado)) {
-        $news[] = $linha;
-    }
-    return $news;
+	$cnx = conn();
+	$sql = "SELECT * FROM gallery";
+	$resultado = $cnx->query($sql);
+	$galeria = array();
+	if($resultado){
+        foreach($resultado as $colum){
+            $galeria[] = $colum;
+        }
+	}
+	return $galeria;
 }
 
 function adicionarGallery($imagem) {
-    $sql = "INSERT INTO gallery(path_image) 
-            VALUES ('$imagem');";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao inserir imagem' . mysqli_error($cnx)); }
-    return 'Imagem inserida com sucesso!';
+	$cnx = conn();
+	$sql = "INSERT INTO gallery(path_image) 
+			VALUES ('$imagem')";
+	$resultado = $cnx->query($sql);
+	if(!$resultado) { die('Erro ao inserir imagem'); }
+	return 'Imagem inserida com sucesso!';
 }
 
 function deletarGallery($id) {
-    $sql = "DELETE FROM gallery WHERE id_image = '$id'";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao deletar imagem' . mysqli_error($cnx)); }
-    return 'Imagem deletada com sucesso!';
+	$cnx = conn();
+	$sql = "DELETE FROM gallery WHERE id_image = '$id'";
+	$resultado = $cnx->query($sql);
+	if(!$resultado) { die('Erro ao deletar imagem'); }
+	return 'Imagem deletada com sucesso!';
+}
+
+function deletargaleriatoda() {
+	$cnx = conn();
+	$sql = "DELETE FROM gallery";
+	$resultado = $cnx->query($sql);
+	if(!$resultado) { die('Erro ao deletar imagem'); }
+	return 'Imagem deletada com sucesso!';
+}
+
+function pegarImagemPorId($id){
+	$cnx = conn();
+	$sql = "SELECT * FROM gallery WHERE id_image = '$id'";
+	$resultado = $cnx->query($sql);
+	foreach($resultado as $col){
+        $imagem = $col;
+	}
+	return $imagem;
 }

@@ -1,29 +1,33 @@
-<h2>Listar Todas Noticias</h2>
+<div class="table">
+	<h1>Listar notícias</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>TITULO</th>
-            <th>SUBTITULO</th>
-            <th>IMAGEM</th>
-            <th>VIEW</th>
-            <th>EDIT</th>
-            <th>DELETE</th>
-        </tr>
-    </thead>
-    <?php foreach ($news as $new): ?>
-    <tr>
-        <td><?=$new['id_news']?></td>
-        <td><?=$new['title']?></td>
-        <td><?=$new['subtitle']?></td>
-        <td><img width="10%" src="<?=$new['images']?>"></td>
-        <td><a href="./news/visualizar/<?=$new['id_news']?>" class="btn btn-secondary">view</a></td>
-        <td><a href="./news/editar/<?=$new['id_news']?>" class="btn btn-info">edit</a></td>
-        <td><a href="./news/deletar/<?=$new['id_news']?>" class="btn btn-danger">del</a></td>
-    </tr>
-    <?php endforeach; ?>
-</table>
+	<a class="link-add" href="news/adicionar">Adicionar nova notícia</a>
 
-<a href="./news/adicionar" class="btn btn-primary">Adicionar nova noticia</a>
+	<div class="title-table">
+		<div class="table-info">
+			<p id="id">ID</p>
+			<p>Imagem</p>
+			<p>Título</p>
+		</div>
+		<div class="table-control">
+			<p>View</p>
+			<p>Edit</p>
+			<p>Delete</p>
+		</div>
+	</div>
 
+	<?php foreach ($news as $new): ?>
+		<div class="table-content">
+			<div class="table-info">
+				<p id="id"><?=$new['id_news']?></p>
+				<p><img src="<?=$new['images']?>"></p>
+				<p><?=$new['title']?></p>
+			</div>
+			<div class="table-control">
+				<p><a href="news/visualizar/<?=$new['id_news']?>"><img src="publico/img/icon/eye.svg"></a></p>
+				<p><a href="news/editar/<?=$new['id_news']?>"><img src="publico/img/icon/edit.svg"></a></p>
+				<p><a href="news/deletar/<?=$new['id_news']?>"><img src="publico/img/icon/delete.svg"></a></p>
+			</div>
+		</div>
+	<?php endforeach; ?>
+</div>

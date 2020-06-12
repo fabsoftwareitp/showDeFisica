@@ -38,58 +38,7 @@
 		height: auto;
 	}
 
-
-	.agenda{
-		height: 240px;
-	}
-	.title-slide{
-		font-size: 18px;
-	}
-	.item-list{
-		max-width: 320px;
-	}
-	.description{
-		width: 33.5%;
-	}
-	.info-title{
-		font-size: 15px;
-		letter-spacing: 1px;
-	}
-	.info-sub{
-		font-size: 11px;
-		font-weight: bold;
-	}
-	.banners{
-		width: 66.5%;
-	}
-	.date{
-		width: 60px;
-		height: 100px;
-	}
-	.saiba-mais{
-		height: 30px;
-		font-size: 9px;
-		letter-spacing: 1px;
-	}
-	.saiba-mais p{
-		margin: 5px;
-	}
-	.date:hover{
-		width: 35%;
-		height: 120px;
-	}
-	.date:hover .saiba-mais{
-		height: 45px;
-		font-size: 11px;
-	}
-	.date:hover .saiba-mais a{
-		font-size: 8px;
-		margin: 0 5px;
-	}
-	.navigation{
-		height: 40px;
-	}
-
+	/* SLIDER SHOW DINAMICO COM BX-SLIDER */
 
 	.contact p{
 		font-size: 13px;
@@ -176,56 +125,7 @@
 	}
 
 
-	.agenda{
-		height: 350px;
-	}
-	.title-slide{
-		font-size: 24px;
-	}
-	.item-list{
-		max-width: 600px;
-	}
-	.description{
-		width: 45%;
-	}
-	.info-title{
-		font-size: 20px;
-		letter-spacing: 1px;
-	}
-	.info-sub{
-		font-size: 14px;
-	}
-	.banners{
-		width: 55%;
-	}
-	.date{
-		width: 95px;
-		height: 170px;
-	}
-	.saiba-mais{
-		height: 40px;
-		font-size: 13px;
-		letter-spacing: 2px;
-	}
-	.saiba-mais p{
-		margin: 7px;
-	}
-	.date:hover{
-		width: 37%;
-		height: 230px;
-	}
-	.date:hover .saiba-mais{
-		height: 70px;
-		font-size: 19px;
-	}
-	.date:hover .saiba-mais a{
-		font-size: 12px;
-		margin: 0 5px;
-		letter-spacing: 1px;
-	}
-	.navigation{
-		height: 60px;
-	}
+	/* SLIDER SHOW DINAMICO COM BX-SLIDER */
 
 
 	.contact p{
@@ -308,53 +208,7 @@
 	}
 
 
-	.agenda{
-		height: 450px;
-	}
-	.title-slide{
-		font-size: 30px;
-	}
-	.description{
-		width: 35%;
-		padding: 0 20px 0 0;
-	}
-	.info-title{
-		font-size: 25px;
-	}
-	.info-sub{
-		font-size: 20px;
-	}
-	.banners{
-		width: 55%;
-	}
-	.date{
-		height: 250px;
-		width: 30%;
-	}
-	.saiba-mais{
-		height: 50px;
-		font-size: 18px;
-	}
-	.saiba-mais p{
-		margin: 5px 0 0 10px;
-	}
-	.date:hover .saiba-mais{
-		font-size: 20px;
-		height: 80px;
-		font-weight: bold;
-		letter-spacing: 1px;
-	}
-	.date:hover .saiba-mais a{
-		font-size: 18px;
-		margin: 5px 0 0 10px;
-	}
-	.date:hover{
-		width: 35%;
-		height: 300px;
-	}
-	.navigation{
-		height: 60px;
-	}
+	/* SLIDER SHOW DINAMICO COM BX-SLIDER */
 
 
 	.contact{
@@ -403,7 +257,7 @@
 	}
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1440px){
+@media only screen and (min-width: 1025px){
 	.welcome{
 		height: 450px;
 	}
@@ -442,53 +296,7 @@
 	}
 
 
-	.agenda{
-		height: 450px;
-	}
-	.title-slide{
-		font-size: 30px;
-	}
-	.description{
-		width: 35%;
-		padding: 0 20px 0 0;
-	}
-	.info-title{
-		font-size: 25px;
-	}
-	.info-sub{
-		font-size: 20px;
-	}
-	.banners{
-		width: 45%;
-	}
-	.date{
-		width: 160px;
-		height: 250px;
-	}
-	.saiba-mais{
-		height: 50px;
-		font-size: 18px;
-	}
-	.saiba-mais p{
-		margin: 5px 0 0 10px;
-	}
-	.date:hover .saiba-mais{
-		font-size: 20px;
-		height: 80px;
-		font-weight: bold;
-		letter-spacing: 1px;
-	}
-	.date:hover .saiba-mais a{
-		font-size: 18px;
-		margin: 5px 0 0 10px;
-	}
-	.date:hover{
-		width: 200px;
-		height: 300px;
-	}
-	.navigation{
-		height: 60px;
-	}
+	/* SLIDER SHOW DINAMICO COM BX-SLIDER */
 
 
 	.contact{

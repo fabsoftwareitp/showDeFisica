@@ -1,48 +1,58 @@
 <?php
 
 function pegarTodosUsuarios() {
+    $cnx = conn();
     $sql = "SELECT * FROM user";
-    $resultado = mysqli_query(conn(), $sql);
+    $resultado = $cnx->query($sql);
     $usuarios = array();
-    while ($linha = mysqli_fetch_assoc($resultado)) {
-        $usuarios[] = $linha;
+    foreach($resultado as $col){
+        $usuarios[] = $col;
     }
     return $usuarios;
 }
 
 function pegarUsuarioPorId($id) {
-    $sql = "SELECT * FROM user WHERE id_user = $id";
-    $resultado = mysqli_query(conn(), $sql);
-    $usuario = mysqli_fetch_assoc($resultado);
+    $cnx = conn();
+    $sql = "SELECT * FROM user WHERE id_user = '$id'";
+    $resultado = $cnx->query($sql);
+    foreach($resultado as $col){
+        $usuario = $col;
+    }
     return $usuario;
 }
 
 function adicionarUsuario($nome, $email, $senha) {
+    $cnx = conn();
     $sql = "INSERT INTO user(name_user, email_user, password_user) 
-			VALUES ('$nome', '$email', '$senha');";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao cadastrar usuário' . mysqli_error($cnx)); }
+			VALUES ('$nome', '$email', '$senha')";
+    $resultado = $cnx->query($sql);
+    if(!$resultado) { die('Erro ao cadastrar usuário'); }
     return 'Usuario cadastrado com sucesso!';
 }
 
 function editarUsuario($id, $nome, $email) {
+    $cnx = conn();
     $sql = "UPDATE user SET name_user = '$nome', email_user = '$email' WHERE id_user = $id";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao alterar usuário' . mysqli_error($cnx)); }
+    $resultado = $cnx->query($sql);
+    if(!$resultado) { die('Erro ao alterar usuário'); }
     return 'Usuário alterado com sucesso!';
 }
 
 function deletarUsuario($id) {
+    $cnx = conn();
     $sql = "DELETE FROM user WHERE id_user = $id";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao deletar usuário' . mysqli_error($cnx)); }
+    $resultado = $cnx->query($sql);
+    if(!$resultado) { die('Erro ao deletar usuário'); }
     return 'Usuario deletado com sucesso!';
             
 }
 
 function pegarUsuarioPorEmailSenha($email, $senha) {
+    $cnx = conn();
     $sql = "SELECT * FROM user WHERE email_user = '$email' and password_user = '$senha'";
-    $resultado = mysqli_query(conn(), $sql);
-    $usuario = mysqli_fetch_assoc($resultado);
+    $resultado = $cnx->query($sql);
+    foreach($resultado as $col){
+        $usuario = $col;
+    }
     return $usuario;
 }

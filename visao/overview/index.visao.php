@@ -1,123 +1,35 @@
-<div class="agenda fundo">
-	<input type="radio" name="nav-agenda" id="n1" checked>
-	<input type="radio" name="nav-agenda" id="n2">
-	<input type="radio" name="nav-agenda" id="n3">
-
-	<p class="title-slide">Agenda</p>
-
-	<div class="slide">
-		<div class="item-list">
-			<div class="description">
-				<p class="info-title">Itapetininga</p>
-				<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus </p>
-			</div>
-
-			<div class="banners">
-				<div class="date">
-					<img src="publico/img/banner/cartaz 25.09.19.jpeg" alt="">
-
-					<div class="saiba-mais">
-						<p>25 set</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia 19.10.png" alt="">
-
-					<div class="saiba-mais">
-						<p>19 out</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia feira de ciencias outubro.png" alt="">
-
-					<div class="saiba-mais">
-						<p>24 out</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-			</div>
+<div class="table">
+	<h1>Listar Eventos</h1>
+	
+	<a class="link-add" href="overview/adicionar">Adicionar novo evento</a>
+	
+	<div class="title-table">
+		<div class="table-info">
+			<p>Título</p>
+			<p>Data</p>
+			<p>Cidade</p>
+			<p>Local</p>
 		</div>
-
-		<div class="item-list">
-			<div class="description">
-				<p class="info-title">Itú</p>
-				<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus</p>
-			</div>
-
-			<div class="banners">
-				<div class="date">
-					<img src="publico/img/banner/cartaz 25.09.19.jpeg" alt="">
-
-					<div class="saiba-mais">
-						<p>18 fev</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia 19.10.png" alt="">
-
-					<div class="saiba-mais">
-						<p>20 mar</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia feira de ciencias outubro.png" alt="">
-
-					<div class="saiba-mais">
-						<p>05 abr</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="item-list">
-			<div class="description">
-				<p class="info-title">Itapeva</p>
-				<p class="info-sub">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque omnis quibusdam repellat voluptas temporibus</p>
-			</div>
-
-			<div class="banners">
-				<div class="date">
-					<img src="publico/img/banner/cartaz 25.09.19.jpeg" alt="">
-
-					<div class="saiba-mais">
-						<p>02 jun</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia 19.10.png" alt="">
-
-					<div class="saiba-mais">
-						<p>13 ago</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-
-				<div class="date">
-					<img src="publico/img/banner/show dia feira de ciencias outubro.png" alt="">
-
-					<div class="saiba-mais">
-						<p>11 nov</p>
-						<a href="">Escola: Nao sei oq</a>
-					</div>
-				</div>
-			</div>
+		<div class="table-control">
+			<p>View</p>
+			<p>Edit</p>
+			<p>Delete</p>
 		</div>
 	</div>
-
-	<div class="navigation">
-		<label class="lbl-slide s1" for="n1"><div class="circle"></div></label>
-		<label class="lbl-slide s2" for="n2"><div class="circle"></div></label>
-		<label class="lbl-slide s3" for="n3"><div class="circle"></div></label>
-	</div>
+	
+	<?php foreach ($eventos as $evento): ?>
+		<div class="table-content">
+			<div class="table-info">
+				<p><?=$evento['title']?></p>
+				<p><?=$evento['date_show']?></p>
+				<p><?=$evento['city']?></p>
+				<p><?=$evento['local_show']?></p>
+			</div>
+			<div class="table-control">
+				<p><a href="overview/visualizar/<?=$evento['id_overview']?>"><img src="publico/img/icon/eye.svg"></a></p>
+				<p><a href="overview/editar/<?=$evento['id_overview']?>"><img src="publico/img/icon/edit.svg"></a></p>
+				<p><a href="overview/deletar/<?=$evento['id_overview']?>"><img src="publico/img/icon/delete.svg"></a></p>
+			</div>
+		</div>
+	<?php endforeach; ?>
 </div>

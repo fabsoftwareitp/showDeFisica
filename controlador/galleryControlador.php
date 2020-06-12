@@ -11,10 +11,41 @@ function index(){
 }
 
 /** admin */
+function deletarGaleria(){
+	deletargaleriatoda();
+	redirecionar('gallery/');
+}
+
+/** admin */
 function adicionar(){
-	if(ehPost()):
-		$images = uploadImage($_FILES, "G");
-		adicionarGallery($images);
+	if(ehPost()){
+
+		$i= 0;
+
+		$limite = count($_FILES['images']['name']);
+
+		while($i < $limite){
+
+			$name = $_FILES['images']['name'][$i];
+			$tmpname = $_FILES['images']['tmp_name'][$i];
+			$type = $_FILES['images']['type'][$i];
+			// $error = $_FILES['images']['error'][$i];
+
+			$enderecoImagem = uploadImage($name, $tmpname, $type, 'G');
+			adicionarGallery($enderecoImagem);
+
+			$i++;
+		}
+
 		redirecionar("gallery/");
-	endif;
+	}
+}
+
+/** admin */
+function deletar($id){
+	$imagem = pegarImagemPorId($id);
+	deletarGallery($id);
+	unlink($imagem['path_image']);
+	unset($imagem);
+	redirecionar("gallery/");
 }
