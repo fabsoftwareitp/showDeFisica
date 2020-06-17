@@ -41,7 +41,7 @@ function deletarEvento($id){
 
 function visualizarEvento($id){
 	$cnx = conn();
-	$sql = "SELECT *,DATE(date_show, '%d-%m-%Y') AS date_show  FROM diary WHERE id_overview = '$id'";
+	$sql = "SELECT * FROM diary WHERE id_overview = '$id'";
 	$resultado = $cnx->query($sql);
 	foreach($resultado as $col){
         $evento = $col;

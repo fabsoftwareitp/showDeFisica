@@ -220,11 +220,10 @@
 	font-weight: bold;
 }
 .ultimas-noticias a{
+	color: #da3241;
 	width: 115px;
 	display: flex;
 	justify-content: space-between;
-}
-#plus-circle{
 	cursor: pointer;
 }
 .descricao-noticia{

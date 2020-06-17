@@ -31,12 +31,23 @@
 	</div>
 
 	<div class="div-org">
+
+		<?php if(isset($evento)) $data = explode('-',$evento['date_show']);?>
+
 		<div class="select w1">
 			<select class="w3" name="day">
 				<option value="default">Dia</option>
 
 				<?php for($dia = 1; $dia <= 31; $dia++):?>
-					<option value="<?=$dia?>"><?=$dia?></option>
+					<?php if(isset($data)):?>
+						<?php if($data[2] == $dia):?>
+							<option value="<?=$dia?>" selected><?=$dia?></option>
+						<?php else:?>
+							<option value="<?=$dia?>"><?=$dia?></option>
+						<?php endif;?>
+					<?php else:?>
+						<option value="<?=$dia?>"><?=$dia?></option>
+					<?php endif;?>
 				<?php endfor;?>
 			</select>
 
@@ -44,16 +55,34 @@
 				<option value="default">Mês</option>
 
 				<?php for($mes = 1; $mes <= 12; $mes++):?>
-					<option value="<?=$mes?>"><?=$mes?></option>
+					<?php if(isset($data)):?>
+						<?php if($data[1] == $mes):?>
+							<option value="<?=$mes?>" selected><?=$mes?></option>
+						<?php else:?>
+							<option value="<?=$mes?>"><?=$mes?></option>
+						<?php endif;?>
+					<?php else:?>
+						<option value="<?=$mes?>"><?=$mes?></option>
+					<?php endif;?>
 				<?php endfor;?>
 			</select>
 		</div>
 
 		<div class="radio">
-			<input type="radio" name="year" value="<?=date('Y')?>" id="first" checked>
-			<label for="first" id="first"><?=date('Y')?></label>
+			<?php if(isset($evento)):?>
+				<?php if($data[0] == date('Y')):?>
+					<input type="radio" name="year" value="<?=date('Y')?>" id="first" checked>
+					<input type="radio" name="year" value="<?=date('Y')+1?>" id="last">
+				<?php else:?>
+					<input type="radio" name="year" value="<?=date('Y')?>" id="first">
+					<input type="radio" name="year" value="<?=date('Y')+1?>" id="last" checked>
+				<?php endif;?>
+			<?php else:?>
+				<input type="radio" name="year" value="<?=date('Y')?>" id="first" checked>
+				<input type="radio" name="year" value="<?=date('Y')+1?>" id="last">
+			<?php endif;?>
 
-			<input type="radio" name="year" value="<?=date('Y')+1?>" id="last">
+			<label for="first" id="first"><?=date('Y')?></label>
 			<label for="last" id="last"><?=date('Y')+1?></label>
 		</div>
 	</div>

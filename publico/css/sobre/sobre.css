@@ -3,14 +3,10 @@
 .img_time{
     height: 450px;
 }
-.divtxt{
-    display: block;
-}
 
-.divtxt p{
-    padding-top: 20%;
-    display: table-cell;
-    vertical-align: middle;
+.div-about{
+    display: flex;
+    align-items: center;
 }
 
 .content{

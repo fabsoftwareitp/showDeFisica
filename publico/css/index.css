@@ -3,7 +3,6 @@
 
 /* ELEMENTS */
 @import 'elements/header.css';
-@import 'news.css';
 @import 'elements/template.css';
 @import 'elements/footer.css';
 @import 'elements/form.css';
@@ -16,3 +15,4 @@
 @import 'galeria/galeria.css';
 @import 'news/news.css';
 @import 'sobre/sobre.css';
+@import 'overview/overview.css';
