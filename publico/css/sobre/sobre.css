@@ -22,7 +22,6 @@
     color: #333;
     text-align: center;
     transition: 0.5s;
-    z-index: 1000;
    
 }
 .content:hover{
