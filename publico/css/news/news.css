@@ -1,5 +1,8 @@
 .news-background{
     width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
 .news-background img{
     width: 100%;

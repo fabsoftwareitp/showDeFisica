@@ -1,8 +1,8 @@
 <div class="news-background">
 	<img src="<?=$new['images']?>">
 	<div class="legenda">
-		<p class="title"><?=$new['title']?></p>
-		<p class="subtitle"><?=$new['subtitle']?></p>
+		<h1 class="title"><?=$new['title']?></h1>
+		<h3 class="subtitle"><?=$new['subtitle']?></h3>
 	</div>
 </div>
 <div class="news-content">
