@@ -1,5 +1,5 @@
 <div class="div-about w1">
-	<div class="w2">
+	<div class="square w2">
 		<span></span>
 		<span></span>
 		<span></span>
@@ -18,6 +18,6 @@
 	</div>
 
 	<div class="w2">
-		<img class="img_time " src="publico/img/elements/time.png">
+		<img class="img_time " src="publico/img/elements/time.png" width="100%">
 	</div>
 </div>
