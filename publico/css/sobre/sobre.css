@@ -1,14 +1,19 @@
 @import 'animations.css';
 @import 'responsive.css';
 
-
+.w1{
+    justify-content: center;
+    margin: auto;
+}
 .img_time{
-    height: 450px;
+    height: 70vh;
+
 }
 
 .div-about{
     display: flex;
     align-items: center;
+   
 }
 
 .content{
@@ -18,6 +23,7 @@
     text-align: center;
     transition: 0.5s;
     z-index: 1000;
+   
 }
 .content:hover{
     color:white;
@@ -41,7 +47,7 @@
 
 @media (max-width: 900px){
     .img_time{
-        height:40vh;
+        height:45vh;
 
     }
 }
@@ -52,6 +58,8 @@
 
     }
 }
+
+
 
 @media (max-width: 634px) {
     .img_time{

@@ -1,6 +1,6 @@
 
 <div class="div-about w1">
-	<div class="w2">
+	<div class="w2 square">
 		<span></span>
 		<span></span>
 		<span></span>
