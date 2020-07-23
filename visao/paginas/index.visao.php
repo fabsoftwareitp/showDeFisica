@@ -1,7 +1,10 @@
 <div class="welcome">
 	<img src="publico/img/elements/ausronauta.png">
+
 	<p>Um novo jeito de aprender <span>ciência</span></p>
+
 	<div class="curve fundo"></div>
+
 	<a href="#sobre">&#9660;</a>
 </div>
 
@@ -10,22 +13,31 @@
 		<p class="sobre">Sobre o Projeto</p>
 		<p>Show de física é um projeto no campo da Educação e Ciência. Sua missão é contribuir para o ensino de conceitos físicos por meio de diferentes e divertidos métodos de apredizagem.</p>
 	</div>
+	<!-- 
 	<div class="container">
 		<div class='atom'>
 			<div class='line'>
 				<div class='neutrino a'></div>
 			</div>
+
 			<div class='line'>
 				<div class='neutrino b'></div>
 			</div>
+
 			<div class='line'>
 				<div class='neutrino c '></div>
 			</div>
+
 			<div class='quark animated pulse infinite'></div>
 		</div>
-	</div>
-	
+	</div> -->
 </div>
+
+<script>
+	// $(document).ready(function(){
+		// $('.slider').bxSlider();
+	// });
+</script>
 
 <div class="agenda fundo">
 
@@ -33,31 +45,27 @@
 
 	<div class="eventos">
 		<div class="slider">
-			<?php foreach($events as $event):?>
-				<?php $data = explode('-',$event['date_show']);?>
+			<?php foreach($events as $event):
+					$data = explode('-',$event['date_show']);
+				?>
 
 				<div class="item-slider">
 					<div class="content-slide">
 						<div class="description">
 							<div class="dataevento">
-								<p><?=$event['city']?> - <?=$data[2].'/'.$data[1].'/'.$data[0]?></p>
+								<p><?=$event['city']?></p>
+								<p><?=$data[2].'/'.$data[1].'/'.$data[0]?></p>
 							</div>
 
 							<div class="descricaoevento">
-								<p><?=$event['title']?></p>
-								<p><?=$event['subtitle']?></p>
+								<p id="title-evento"><?=$event['title']?></p>
 							</div>
 
-							<a href="overview/visualizar/<?=$event['id_overview']?>" class="linkevento">Saiba mais</a>
+							<a href="./overview/visualizar/<?=$event['id_overview']?>" class="linkevento">Saiba mais</a>
 						</div>
 
 						<div class="description-banner">
 							<img src="<?=$event['banner']?>">
-
-							<?php
-								$address = str_replace(" ", "+", $event['local_show']);
-							?>
-							<iframe src="https://maps.google.com/maps?q=<?=$address?>&output=embed" frameborder="0"></iframe>
 						</div>
 					</div>
 				</div>
@@ -68,7 +76,7 @@
 
 <div class="contact fundo">
 	<p>Deseja o Show da Física em sua Escola ?</p>
-	<a href="pages/contact">Entre em contato</a>
+	<a href="./pages/contact">Entre em contato</a>
 </div>
 
 <div class="news">
@@ -76,13 +84,13 @@
 		<p>Últimas Notícias e Atualizações</p>
 
 		<?php if(acessoUsuarioEstaLogado()):?>
-			<a href="news/adicionar"><p>Adicionar</p></a>
+			<a href="./news/adicionar"><p>Adicionar</p></a>
 		<?php endif;?>
 	</div>
 
 	<div class="descricao-noticia">
 		<?php foreach($news as $notice):?>
-			<a href="news/visualizar/<?=$notice['id_news']?>" class="caixa-noticia">
+			<a href="./news/visualizar/<?=$notice['id_news']?>" class="caixa-noticia">
 				<div class="img-caixa-noticia">
 					<img src="<?=$notice['images']?>" alt="">
 				</div>
@@ -96,5 +104,5 @@
 
 <div class="apoie">
 	<p>Gostou da ideia e quer apoiar o projeto?</p>
-	<a href="pages/support">Torne-se um apoiador</a>
+	<a href="./pages/contact">Torne-se um apoiador</a>
 </div>

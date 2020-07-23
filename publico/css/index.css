@@ -1,18 +1,2 @@
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
-/* ELEMENTS */
-@import 'elements/header.css';
-@import 'elements/template.css';
-@import 'elements/footer.css';
-@import 'elements/form.css';
-@import 'elements/table.css';
-
-/* PAGES */
 @import 'home/home.css';
-@import 'contato/contato.css';
-@import 'dashboard/dashboard.css';
-@import 'galeria/galeria.css';
-@import 'news/news.css';
 @import 'sobre/sobre.css';
-@import 'overview/overview.css';

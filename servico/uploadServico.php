@@ -14,7 +14,7 @@ function verificarImagem($type, $error, $size){
 
 function uploadImage($nome, $tmp_name, $type, $path){
 
-	$diretory = 'publico/img/upload/';
+	$diretory = './publico/img/upload/';
 
 	switch ($path) {
 		case 'B':

@@ -26,7 +26,7 @@
 	</div>
 
 	<div class="form-navigation">
-		<a href="usuario/">Cancelar</a>
+		<a href="./usuario/">Cancelar</a>
 		<button type="reset">Limpar</button>
 		<button type="submit">Concluir</button>
 	</div>

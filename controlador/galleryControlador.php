@@ -12,6 +12,12 @@ function index(){
 
 /** admin */
 function deletarGaleria(){
+	$galeria = pegarTodasImagens();
+
+	foreach($galeria as $imagem){
+		unlink($imagem['path_image']);
+	}
+
 	deletargaleriatoda();
 	redirecionar('gallery/');
 }

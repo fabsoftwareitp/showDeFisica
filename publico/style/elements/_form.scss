@@ -1,0 +1,318 @@
+.title-form{
+	text-align: center;
+}
+form{
+    min-height: 250px;
+	margin: 0 auto;
+}
+.normal{
+	position: relative;
+}
+.txt-area{
+	margin: 0 auto 50px auto;
+	width: 90%;
+	border: none;
+	position: relative;
+	padding: 10px 0;
+	min-height: 150px;
+}
+.normal input,
+.normal label,
+.txt-area textarea,
+.txt-area label{
+	box-sizing: border-box;
+	outline: none;
+	box-shadow: none;
+	position: absolute;
+}
+.normal input:focus,
+.normal input:valid,
+.txt-area textarea:focus,
+.txt-area textarea:valid{
+	border-bottom: 1px solid #da3241;
+}
+.normal input:focus ~ label,
+.normal input:valid ~ label,
+.txt-area textarea:focus ~ label,
+.txt-area textarea:valid ~ label{
+	color: #da3241;
+}
+.txt-area textarea,
+.normal input{
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border: none;
+	background-color: transparent;
+	border-bottom: 1px solid #999999;
+}
+.txt-area textarea{
+	max-width: 100%;
+	min-width: 100%;
+	height: 100%;
+	padding: 30px 0 10px 5px;
+}
+.txt-area label{
+	top: 10px;
+	left: 0;
+	transition: all 0.3s;
+}
+.txt-area textarea:focus ~ label,
+.txt-area textarea:valid ~ label{
+	font-size: 12px;
+}
+.normal label{
+	color: #666666;
+	bottom: 0;
+	left: 0;
+	transition: all 0.5s;
+}
+.image-form{
+	margin: auto;
+	display: flex;
+	margin-bottom: 40px;
+}
+.image-form .label-image{
+	color: #666666;
+	text-align: center;
+	background-color: #e0e0e0;
+}
+.image-form .image-preview{
+	border: 1px solid #999999;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #999999;
+}
+.image-preview__image{
+	display: none;
+	height: 100%;
+	max-height: 100%;
+	max-width: 100%;
+}
+.notice{
+	width: 90%;
+}
+.notice h3{
+	text-align: center;
+}
+.data-form{
+	display: flex;
+	margin: 20px auto;
+	width: 90%;
+}
+.data-form h1{
+	width: 100%;
+	text-align: center;
+	color: #666;
+}
+.select-form{
+	display: flex;
+	justify-content: space-between;
+}
+.select-form select{
+	border: none;
+	background-color: transparent;
+	border-left: 2px solid #da3241;
+	border-bottom: 1px solid #da3241;
+}
+.radio-form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.radio-form label{
+	background-color: #e8e8e8;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	color: #333333;
+	transition: all .5s;
+}
+.radio-form label#first{
+	border-right: 1px solid #aaaaaa;
+}
+.radio-form label#last{
+	border-left: 1px solid #aaaaaa;
+}
+.radio-form input#first:checked ~ label#first,
+.radio-form input#second:checked ~ label#second,
+.radio-form input#last:checked ~ label#last{
+	background-color: #da3241;
+	color: #fff;
+}
+.link{
+	width: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+.link a,
+.link button{
+	text-align: center;
+	border: none;
+}
+.link a,
+.link button:not(#sub){
+	background: #e0e0e0;
+	color: #000000;
+}
+.link button#sub{
+	color: #ffffff;
+	background : #da3241;
+}
+
+@media only screen and (min-width: 320px){
+	.title-form{
+		font-size: 20px;
+		margin: 20px 0;
+	}
+	form{
+		width: 90%;
+	}
+	.normal{
+		width: 90%;
+		margin: 25px auto;
+		height: 40px;
+	}
+	.normal input:focus ~ label,
+	.normal input:valid ~ label{
+		font-size: 14px;
+		bottom: 25px;
+	}
+	.normal input{
+		height: 30px;
+		padding-left: 5px;
+	}
+	.normal label{
+		padding-left: 5px;
+		font-size: 16px;
+	}
+	.data-form{
+		flex-direction: column;
+		align-items: center;
+	}
+	.data-form h1{
+		font-size: 16px;
+		margin: 0 0 10px 0;
+	}
+	.select-form{
+		margin: 10px 0 20px;
+		width: 100%;
+	}
+	.select-form select{
+		width: 48%;
+		padding: 10px 0;
+	}
+	.radio-form{
+		width: 100%;
+		margin: 0 0 10px;
+	}
+	.radio-form label{
+		width: 50%;
+		padding: 8px 0;
+		font-size: 14px;
+	}
+	.radio-form label#first{
+		border-bottom-left-radius: 20px;
+		border-top-left-radius: 20px;
+	}
+	.radio-form label#last{
+		border-bottom-right-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+	.image-form{
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+	.image-form .label-image{
+		border-radius: 20px;
+		margin: 10px 0;
+		width: 150px;
+		padding: 5px 0;
+	}
+	.image-form .image-preview{
+		width: 90%;
+		height: 150px;
+	}
+	.notice{
+		margin: 20px auto 40px;
+	}
+	.notice h3{
+        font-size: 16px;
+		margin: 40px 0 20px;
+	}
+	.link a,
+	.link button{
+		margin: 0 5px;
+		width: 80px;
+		padding: 5px;
+		border-radius: 20px;
+	}
+}
+
+@media only screen and (min-width: 425px){
+	form{
+		width: 80%;
+	}
+	.normal{
+		height: 50px;
+	}
+	.normal input:focus ~ label,
+	.normal input:valid ~ label{
+		font-size: 16px;
+		bottom: 28px;
+	}
+	.normal input{
+		height: 35px;
+	}
+	.normal label{
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 768px){
+	.data-form{
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.select-form{
+		width: 49%;
+	}
+	.radio-form{
+		width: 49%;
+	}
+	.image-form{
+		flex-direction: row;
+	}
+	.image-form .label-image{
+		margin: 0 0 0 auto;
+	}
+	.image-form .image-preview{
+		width: 60%;
+	}
+}
+
+@media only screen and (min-width: 1024px){
+	form{
+		width: 70%;
+	}
+	.image-form{
+		margin-top: 50px;
+    }
+    .notice h3{
+        font-size: 18px;
+    }
+	.image-form .image-preview{
+		height: 250px;
+	}
+}
+
+@media only screen and (min-width: 1440px){
+	form{
+		width: 60%;
+	}
+}
