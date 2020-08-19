@@ -5,9 +5,9 @@ function pegarTodosUsuarios() {
     $sql = "SELECT * FROM user";
     $resultado = $cnx->query($sql);
     $usuarios = array();
-    foreach($resultado as $col){
-        $usuarios[] = $col;
-    }
+    while ($col = $resultado->fetchArray(SQLITE3_ASSOC)) {
+		$usuarios[] = $col;
+	}
     return $usuarios;
 }
 
@@ -15,9 +15,9 @@ function pegarUsuarioPorId($id) {
     $cnx = conn();
     $sql = "SELECT * FROM user WHERE id_user = '$id'";
     $resultado = $cnx->query($sql);
-    foreach($resultado as $col){
-        $usuario = $col;
-    }
+    while ($col = $resultado->fetchArray(SQLITE3_ASSOC)) {
+		$usuario = $col;
+	}
     return $usuario;
 }
 
@@ -43,6 +43,9 @@ function deletarUsuario($id) {
     $sql = "DELETE FROM user WHERE id_user = $id";
     $resultado = $cnx->query($sql);
     if(!$resultado) { die('Erro ao deletar usuário'); }
+    if($_SESSION["acesso"]["id"] == $id){
+        redirecionar("login/logout");
+    }
     return 'Usuario deletado com sucesso!';
             
 }
@@ -51,8 +54,8 @@ function pegarUsuarioPorEmailSenha($email, $senha) {
     $cnx = conn();
     $sql = "SELECT * FROM user WHERE email_user = '$email' and password_user = '$senha'";
     $resultado = $cnx->query($sql);
-    foreach($resultado as $col){
-        $usuario = $col;
-    }
+    while ($col = $resultado->fetchArray(SQLITE3_ASSOC)) {
+		$usuario = $col;
+	}
     return $usuario;
 }
