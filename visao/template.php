@@ -6,8 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" type="image/x-png" href="publico/img/elements/ausronauta.png">
 
-		<link rel="stylesheet" href="publico/style/index.css">
 		<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
+		<link rel="stylesheet" href="publico/style/index.css">
 	</head>
 
 	<body>
