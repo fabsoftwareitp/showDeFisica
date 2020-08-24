@@ -6,7 +6,7 @@ function pegarTodasNews() {
     $resultado = $cnx->query($sql);
     $news = array();
     if($resultado){
-        while ($col = $resultado->fetchArray(SQLITE3_ASSOC)) {
+        foreach($resultado as $col){
             $news[] = $col;
         }
     }
@@ -17,9 +17,9 @@ function pegarNewPorId($id) {
     $cnx = conn();
     $sql = "SELECT * FROM news WHERE id_news = '$id'";
     $resultado = $cnx->query($sql);
-    while ($col = $resultado->fetchArray(SQLITE3_ASSOC)) {
-		$new = $col;
-	}
+    foreach($resultado as $col){
+        $new = $col;
+    }
     return $new;
 }
 

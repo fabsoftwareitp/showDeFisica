@@ -43,9 +43,9 @@ function visualizarEvento($id){
 	$cnx = conn();
 	$sql = "SELECT * FROM diary WHERE id_overview = '$id'";
 	$resultado = $cnx->query($sql);
-	while ($col = $resultado->fetchArray(SQLITE3_ASSOC)) {
-		$evento = $col;
-	}
+	foreach($resultado as $col){
+        $evento = $col;
+    }
 	return $evento;
 }
 
@@ -55,7 +55,7 @@ function pegarTodosEventos(){
 	$resultado = $cnx->query($sql);
 	$eventos = array();
 	if($resultado){
-		while ($col = $resultado->fetchArray(SQLITE3_ASSOC)) {
+		foreach($resultado as $col){
 			$eventos[] = $col;
 		}
 	}
