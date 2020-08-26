@@ -1,35 +1,73 @@
-<div class="table">
-	<h1>Listar Eventos</h1>
-	
-	<a class="link-add" href="overview/adicionar">Adicionar novo evento</a>
-	
-	<div class="title-table">
-		<div class="table-info">
-			<p>Título</p>
-			<p>Data</p>
-			<p>Cidade</p>
-			<p>Local</p>
+<?php if(acessoUsuarioEstaLogado()): ?>
+	<div class="list">
+		<?php
+			if (count($eventos) == 0){ $msg = "Vazio por aqui"; }
+			elseif (count($eventos) == 1){ $msg = count($eventos)." Evento registrado";}
+			else { $msg = count($eventos)." Eventos registrados";}
+		?>
+		<h1><?=$msg?></h1>
+
+		<a class="link-add" href="./overview/adicionar">Adicionar evento</a>
+
+		<div class="title-list">
+			<div class="list-info">
+				<p class="data">Data</p>
+				<p class="name">Título</p>
+			</div>
+
+			<div class="list-control">
+				<p>Config</p>
+			</div>
 		</div>
-		<div class="table-control">
-			<p>View</p>
-			<p>Edit</p>
-			<p>Delete</p>
-		</div>
+
+		<?php foreach ($eventos as $evento): ?>
+			<div class="list-content">
+				<div class="list-info">
+					<?php $date = explode('-',$evento['date_show']);?>
+
+					<p class="data"><?=$date[2].'/ '.$date[1].'/ '.$date[0]?></p>
+					<p class="name"><?=$evento['title']?></p>
+				</div>
+
+				<div class="list-control">
+					<!-- <input type="radio" onclick="showList()" id="new_check" hidden> -->
+					<!-- <label for="new_check"><img src="./publico/img/icon/more.svg" alt=""></label> -->
+
+					<!-- <div> -->
+						<a href="./overview/visualizar/<?=$evento['id_overview']?>">View</a>
+
+						<!-- <a href="./overview/editar/<?=$evento['id_overview']?>">Editar</a> -->
+						<!-- <a href="./overview/deletar/<?=$evento['id_overview']?>">Deletar</a> -->
+					<!-- </div> -->
+				</div>
+			</div>
+		<?php endforeach; ?>
 	</div>
-	
-	<?php foreach ($eventos as $evento): ?>
-		<div class="table-content">
-			<div class="table-info">
-				<p><?=$evento['title']?></p>
-				<p><?=$evento['date_show']?></p>
-				<p><?=$evento['city']?></p>
-				<p><?=$evento['local_show']?></p>
-			</div>
-			<div class="table-control">
-				<p><a href="overview/visualizar/<?=$evento['id_overview']?>"><img src="publico/img/icon/eye.svg"></a></p>
-				<p><a href="overview/editar/<?=$evento['id_overview']?>"><img src="publico/img/icon/edit.svg"></a></p>
-				<p><a href="overview/deletar/<?=$evento['id_overview']?>"><img src="publico/img/icon/delete.svg"></a></p>
-			</div>
+<?php else:?>
+	<?php if(count($eventos) == 0):?>
+		<div class="empty">
+			<p>Não há nada por aqui!</p>
 		</div>
-	<?php endforeach; ?>
-</div>
+	<?php else:?>
+		<p class="title-overview">Próximos Eventos</p>
+
+		<div class="register-events">
+			<?php foreach ($eventos as $evento): ?>
+				<a class="event-box" href="./overview/visualizar/<?=$evento['id_overview']?>">
+					<img src="<?=$evento['banner']?>">
+
+					<div class="event-content">
+						<?php
+							$date = explode('-',$evento['date_show']);
+							$finaldate = $date[2].'/ '.$date[1].'/ '.$date[0];
+						?>
+
+						<h5><?=$finaldate?></h5>
+						<h4><?=$evento['title']?></h4>
+						<h5><?=$evento['city']?></h5>
+					</div>
+				</a>
+			<?php endforeach; ?>
+		</div>
+	<?php endif;?>
+<?php endif; ?>

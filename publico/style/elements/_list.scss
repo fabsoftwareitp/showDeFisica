@@ -1,0 +1,165 @@
+.list{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.list h1{
+	letter-spacing: 1px;
+}
+.link-add{
+	background-color: #da3241;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+.title-list,
+.list-content{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.list-info{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.list-content{
+	border-bottom: 1px solid #d5d5d5;
+}
+.title-list{
+	background-color: #cccaca6a;
+	font-weight: bold;
+}
+.list-control a{
+	color: #da3241;
+}
+.list-info .id, 
+.list-control{
+	text-align: center;
+}
+
+@media only screen and (min-width: 320px){
+	.list{
+		width: 95%;
+		min-height: 400px;
+		margin: 20px auto 60px;
+	}
+	.list h1{
+		font-size: 20px;
+		margin: 0 0 20px;
+	}
+	.link-add{
+		width: 150px;
+		font-size: 16px;
+		border-radius: 30px;
+		padding: 5px;
+		margin: 10px 0 40px;
+	}
+	.title-list,
+	.list-content{
+		margin: 10px 0 0;
+		padding: 10px 0;
+	}
+	.list-info{
+		width: 80%;
+	}
+	.list-info .name{
+		width: 60%;
+	}
+	.list-info .id, 
+	.list-control{
+		width: 20%;
+	}
+	.list-info .data{
+		width: 100px;
+	}
+}
+@media only screen and (min-width: 425px){
+	.list{
+		width: 90%;
+	}
+}
+@media only screen and (min-width: 768px){
+	.list{
+		width: 75%;
+	}
+}
+@media only screen and (min-width: 1024px){
+	.list{
+		width: 65%;
+		min-height: 400px;
+	}
+}
+@media only screen and (min-width: 1440px){
+	.list{
+		width: 50%;
+	}
+}
+
+/*
+	.list{
+		width: 60%;
+		margin: 40px 20% 60px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.list h1{
+		letter-spacing: 1px;
+		margin: 0 0 40px;
+	}
+	.link-add{
+		padding: 10px 20px;
+		border-radius: 30px;
+		background-color: #da3241;
+		text-align: center;
+		color: #fff;
+		margin: 0 0 40px;
+		font-weight: bold;
+		cursor: pointer;
+		transition: all 0.5s;
+	}
+	.link-add:hover{
+		background-color: #ff8993;
+		color: #000;
+	}
+	.title-list,.list-content{
+		width: 100%;
+		margin: 10px 0 0;
+		display: flex;
+		justify-content: center;
+	}
+	.title-list{
+		background-color: #cccaca6a;
+		font-weight: bold;
+	}
+	.table-info,.table-control{
+		height: 50px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.table-info{
+		width: 65%;
+	}
+	.table-info p{
+		width: 30%;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.table-info p#id{
+		width: 10%;
+	}
+	.table-info p img{
+		height: 100%;
+	}
+	.table-control{
+		width: 35%;
+	}
+	.table-control p{
+		width: 30%;
+	}
+	.table-control p a{
+		cursor: pointer;
+	}
+*/

@@ -38,7 +38,7 @@
 		position:absolute;
 		top: 0;
 		left: 0;
-		background: hsla(0, 0%, 94%, 0.75);
+		background: #f0f0f0e7;
 		transition: 0.3s all ease-in-out;
 		overflow-y: hidden;
 	}
@@ -55,7 +55,7 @@
 		font-size: 18px;
 	}
 	.header .links-menu	.nav-link:hover{
-		background-color: #CCC;
+		background-color: #cccccc;
 		font-size: 22px;
 		letter-spacing: 2px;
 	}
@@ -72,6 +72,7 @@
 		letter-spacing: 3px;
 	}
 }
+
 @media only screen and (min-width: 769px){
 	.header a img{
 		height: 100px;

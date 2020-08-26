@@ -1,0 +1,40 @@
+html{
+	scroll-behavior: smooth;
+}
+*{
+	margin:0;
+	padding:0;
+	outline: none;
+	font-family: 'Roboto', sans-serif;
+}
+body{
+	background-color: #F0F0F0;
+}
+a{
+	text-decoration: none;
+}
+span{
+	color: #da3241;
+}
+.fundo{
+	background-color: #db3340;
+}
+input[type=radio]{
+	display: none;
+}
+
+@media only screen and (min-width: 320px){
+	.container{
+		min-height: 350px;
+	}
+}
+@media only screen and (min-width: 768px){
+	.container{
+		min-height: 420px;
+	}
+}
+@media only screen and (min-width: 1024px){
+	.container{
+		min-height: 500px;
+	}
+}

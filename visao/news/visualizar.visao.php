@@ -1,10 +1,13 @@
-<div class="news-background">
+<div class="news-title">
+	<img class="img-background" src="<?=$new['images']?>">
 	<img src="<?=$new['images']?>">
-	<div class="legenda">
-		<p class="title"><?=$new['title']?></p>
-		<p class="subtitle"><?=$new['subtitle']?></p>
-	</div>
 </div>
+
+<div class="legenda">
+	<h1><?=$new['title']?></h1>
+	<h3><?=$new['subtitle']?></h3>
+</div>
+
 <div class="news-content">
 	<?=$new['text_notice']?>
 </div>

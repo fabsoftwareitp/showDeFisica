@@ -1,16 +1,20 @@
 @import 'animations.css';
+@import 'responsive.css';
 
+.w1{
+    justify-content: center;
+    margin: auto;
+}
 .img_time{
-    height: 450px;
-}
-.divtxt{
-    display: block;
+    height: 70vh;
+
 }
 
-.divtxt p{
-    padding-top: 20%;
-    display: table-cell;
-    vertical-align: middle;
+.div-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
 
 .content{
@@ -19,7 +23,6 @@
     color: #333;
     text-align: center;
     transition: 0.5s;
-    z-index: 1000;
 }
 .content:hover{
     color:white;
@@ -39,4 +42,39 @@
 .content a:hover{
     background: white;
     color:#333;
+}
+
+@media (max-width: 900px){
+    .img_time{
+        height:45vh;
+
+    }
+}
+
+@media (max-width: 770px) {
+    .img_time{
+        height:35vh;
+
+    }
+}
+
+
+
+@media (max-width: 634px) {
+    .img_time{
+        justify-content: center;
+
+    }
+    .div-about{
+        display: inline-block;
+    }
+    .content{
+
+
+        margin: auto;
+    }
+    .w2{
+        justify-content: center;
+        margin:auto;
+    }
 }

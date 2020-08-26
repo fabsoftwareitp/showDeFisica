@@ -1,0 +1,35 @@
+/* -- FONTS -- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* -- URLs -- */
+@import url('href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
+/* -- TEMPLATE -- */
+@import '_template';
+
+/* -- ELEMENTS -- */
+@import 'elements/_header';
+@import 'elements/_list';
+@import 'elements/_form';
+@import 'elements/_footer';
+
+/* -- Controllers -- */
+/* Galeria */
+@import 'gallery/_gallery';
+
+/* Notícias */
+@import 'news/_view';
+
+/* Agenda */
+@import 'overview/_overview';
+@import 'overview/_view';
+
+/* Páginas */
+								@import 'pages/_about';
+@import 'pages/_contact';
+@import 'pages/_dashboard';
+@import 'pages/_home';
+
+/* Usuários */
+@import 'user/_view';

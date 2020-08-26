@@ -1,0 +1,95 @@
+.view{
+	width: 100%;
+	position: relative;
+}
+
+@media only screen and (min-width: 320px){
+	.view .img-background{
+		display: none;
+	}
+	.view img:not(.img-background){
+		width: 100%;
+	}
+	.view-title{
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		margin: 10px auto 10px;
+	}
+	.view-title h1{
+		font-size: 18px;
+		margin-top: 10px;
+	}
+	.view-title h3{
+		font-size: 14px;
+		margin-top: 10px;
+	}
+	.view-title h4{
+		color: red;
+		font-size: 14px;
+	}
+	.view-title iframe{
+		margin: 20px 0 0;
+		height: 300px;
+	}
+	.view-title a{
+		margin: 20px auto;
+		color: #da3241;
+		text-decoration: underline;
+	}
+}
+
+@media only screen and (min-width: 768px){
+	.view .img-background{
+		width: 90%;
+		margin: auto;
+		filter: blur(8px);
+		display: block;
+	}
+	.view img:not(.img-background){
+		width: 70%;
+		position: absolute;
+		top: 50%;
+		border-radius: 10px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.view-title{
+		width: 90%;
+		margin: 10px auto 10px;
+	}
+	.view-title h1{
+		font-size: 22px;
+	}
+	.view-title h3{
+		font-size: 18px;
+	}
+	.view-title h4{
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 1024px){
+	.view .img-background{
+		width: 80%;
+	}
+	.view img:not(.img-background){
+		width: 70%;
+	}
+	.view-title{
+		width: 80%;
+		margin: 20px auto;
+	}
+	.view-title h1{
+		font-size: 25px;
+	}
+	.view-title h3{
+		font-size: 21px;
+	}
+	.view-title h4{
+		font-size: 21px;
+	}
+	.view-title a{
+		font-size: 20px;
+	}
+}
