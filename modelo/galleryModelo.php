@@ -6,9 +6,9 @@ function pegarTodasImagens() {
 	$resultado = $cnx->query($sql);
 	$galeria = array();
 	if($resultado){
-        foreach($resultado as $colum){
-            $galeria[] = $colum;
-        }
+		while ($col = $resultado -> fetchArray(SQLITE3_ASSOC)){
+			$galeria[] = $col;
+		}
 	}
 	return $galeria;
 }
@@ -42,7 +42,7 @@ function pegarImagemPorId($id){
 	$cnx = conn();
 	$sql = "SELECT * FROM gallery WHERE id_image = '$id'";
 	$resultado = $cnx->query($sql);
-	foreach($resultado as $col){
+	while ($col = $resultado -> fetchArray(SQLITE3_ASSOC)){
         $imagem = $col;
 	}
 	return $imagem;

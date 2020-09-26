@@ -24,19 +24,12 @@
 		<div class="list-content">
 			<div class="list-info">
 				<p class="id"><?=$new['id_news']?></p>
-				<p class="name"><?=$new['title']?></p>
-			</div>
+				<a href="./news/visualizar/<?=$new['id_news']?>"><p class="name"><?=$new['title']?></p></a>
+		</div>
 
 			<div class="list-control">
-				<!-- <input type="radio" onclick="showList()" id="new_check" hidden> -->
-				<!-- <label for="new_check"><img src="./publico/img/icon/more.svg" alt=""></label> -->
-
-				<!-- <div> -->
-					<a href="./news/visualizar/<?=$new['id_news']?>">View</a>
-
-					<!-- <a href="./news/editar/<?=$new['id_news']?>">Editar</a> -->
-					<!-- <a href="./news/deletar/<?=$new['id_news']?>">Deletar</a> -->
-				<!-- </div> -->
+				<a href="./news/editar/<?=$new['id_news']?>">Editar</a>
+				<a href="./news/deletar/<?=$new['id_news']?>">Deletar</a>
 			</div>
 		</div>
 	<?php endforeach; ?>

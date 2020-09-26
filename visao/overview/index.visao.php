@@ -26,19 +26,13 @@
 					<?php $date = explode('-',$evento['date_show']);?>
 
 					<p class="data"><?=$date[2].'/ '.$date[1].'/ '.$date[0]?></p>
-					<p class="name"><?=$evento['title']?></p>
+					<p class="name">
+					<a href="./overview/visualizar/<?=$evento['id_overview']?>"><?=$evento['title']?></a>
 				</div>
 
 				<div class="list-control">
-					<!-- <input type="radio" onclick="showList()" id="new_check" hidden> -->
-					<!-- <label for="new_check"><img src="./publico/img/icon/more.svg" alt=""></label> -->
-
-					<!-- <div> -->
-						<a href="./overview/visualizar/<?=$evento['id_overview']?>">View</a>
-
-						<!-- <a href="./overview/editar/<?=$evento['id_overview']?>">Editar</a> -->
-						<!-- <a href="./overview/deletar/<?=$evento['id_overview']?>">Deletar</a> -->
-					<!-- </div> -->
+					<a href="./overview/editar/<?=$evento['id_overview']?>">Editar</a>
+					<a href="./overview/deletar/<?=$evento['id_overview']?>">Deletar</a>
 				</div>
 			</div>
 		<?php endforeach; ?>
