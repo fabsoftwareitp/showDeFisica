@@ -23,19 +23,12 @@
 		<div class="list-content">
 			<div class="list-info">
 				<p class="id"><?=$usuario['id_user']?></p>
-				<p class="name"><?=$usuario['name_user']?></p>
-			</div>
+				<a href="./usuario/visualizar/<?=$usuario['id_user']?>"><p class="name"><?=$usuario['name_user']?></p></a>
+		</div>
 
 			<div class="list-control">
-				<!-- <input type="radio" onclick="showList()" id="usuario_check" hidden> -->
-				<!-- <label for="usuario_check"><img src="./publico/img/icon/more.svg" alt=""></label> -->
-
-				<!-- <div> -->
-					<a href="./usuario/visualizar/<?=$usuario['id_user']?>">View</a>
-
-					<!-- <a href="./usuario/editar/<?=$usuario['id_user']?>">Editar</a> -->
-					<!-- <a href="./usuario/deletar/<?=$usuario['id_user']?>">Deletar</a> -->
-				<!-- </div> -->
+				<a href="./usuario/editar/<?=$usuario['id_user']?>">Editar</a>
+				<a href="./usuario/deletar/<?=$usuario['id_user']?>">Deletar</a>
 			</div>
 		</div>
 	<?php endforeach; ?>

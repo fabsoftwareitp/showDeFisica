@@ -1,10 +1,5 @@
 <div class="about">
-	<!-- <span></span> -->
-	<!-- <span></span> -->
-	<!-- <div class="span"></div> -->
-	<!-- <span></span> -->
-
-	<!-- <div class="content">
+	<div class="content">
 		<h2>Sobre Nós</h2>
 
 		<p>
@@ -12,9 +7,15 @@
 			<br>
 			Atenciosamente,
 			<br>
-			<element>Equipe Show da Fisica</element>
+			Equipe Show da Fisica
 		</p>
-	</div> -->
-</div>
+	</div>
 
-<!-- <img class="img_time" src="publico/img/elements/time.png"> -->
+	<div class="square">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<img src="publico/img/elements/time.png">
+</div>
